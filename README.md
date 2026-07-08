@@ -2,7 +2,7 @@
 
 Documentación y prácticas de laboratorio para **adquisición de datos e IoT** con ESP32-C6 y la placa Pulsar C6.
 
-## 📚 Contenido del curso
+## Contenido del curso
 
 ### Conceptos teóricos
 
@@ -23,7 +23,7 @@ Documentación y prácticas de laboratorio para **adquisición de datos e IoT** 
 4. **[Lab 4: Publicación Wi-Fi](./docs/examples/lab04-wifi.md)** - Envío de datos a la nube
 5. **[Lab 5: Bluetooth LE](./docs/examples/lab05-ble.md)** - Comunicación con dispositivos móviles
 
-## 🚀 Inicio rápido
+## Inicio rápido
 
 ### Requisitos previos
 
@@ -95,7 +95,7 @@ idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor
 ```
 
-## 🛠️ Estructura del repositorio
+## Estructura del repositorio
 
 ```
 .
@@ -122,7 +122,7 @@ idf.py -p /dev/ttyUSB0 flash monitor
 └── package.json                    # Configuración npm
 ```
 
-## 📝 Crear tu primer proyecto
+## Crear tu primer proyecto
 
 ### Proyecto desde plantilla
 
@@ -180,7 +180,7 @@ idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor
 ```
 
-## 🔧 Solución de problemas
+## Solución de problemas
 
 ### "No module named 'serial'"
 ```bash
@@ -199,7 +199,7 @@ sudo usermod -a -G dialout $USER
 3. Soltar **BOOT**
 4. Ejecutar `idf.py flash` nuevamente
 
-## 📖 Recursos adicionales
+## Recursos adicionales
 
 ### Documentación oficial
 - [ESP32-C6 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf)
@@ -216,7 +216,7 @@ sudo usermod -a -G dialout $USER
 - [ESP32 Reddit](https://www.reddit.com/r/esp32/)
 - [GitHub Discussions](https://github.com/espressif/esp-idf/discussions)
 
-## 🤝 Contribuir
+## Contribuir
 
 ¿Encontraste un error o quieres agregar contenido?
 
@@ -226,24 +226,24 @@ sudo usermod -a -G dialout $USER
 4. Push a la rama (`git push origin feature/mejora`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo licencia MIT. Ver archivo `LICENSE` para más detalles.
 
-## ✨ Créditos
+## Créditos
 
 Curso desarrollado para la asignatura de **Adquisición de Datos** con ESP32-C6 y Pulsar C6.
 
 ### Temas cubiertos
-- ✅ Conceptos generales de adquisición de datos
-- ✅ Sensores y transductores
-- ✅ Conversión analógica y digital (ADC y DAC)
-- ✅ Acondicionamiento de señal con op-amps y filtros
-- ✅ Comunicación con sensores (I²C y SPI)
-- ✅ Sistemas embebidos para adquisición de datos
-- ✅ Conectividad Wi-Fi y Bluetooth LE
-- ✅ Introducción a plataformas IoT
+- Conceptos generales de adquisición de datos
+- Sensores y transductores
+- Conversión analógica y digital (ADC y DAC)
+- Acondicionamiento de señal con op-amps y filtros
+- Comunicación con sensores (I²C y SPI)
+- Sistemas embebidos para adquisición de datos
+- Conectividad Wi-Fi y Bluetooth LE
+- Introducción a plataformas IoT
 
 ---
 
-**¡Feliz codificación con ESP32-C6! 🚀**
+**Feliz codificación con ESP32-C6.**
