@@ -16,7 +16,7 @@ Nota
 
 </div>
 
-**ESP-IDF** es compatible con Windows y macOS, pero el proceso de instalación puede variar. Consulta la documentación oficial para instrucciones detalladas.
+**ESP-IDF** también puede instalarse en Windows, pero el proceso de instalación puede variar. Consulta la documentación oficial para instrucciones detalladas.
 
 <div style="text-align: center; margin-top: 10px;">
     <p>Consulta la documentación oficial de ESP-IDF para instrucciones por plataforma:</p>

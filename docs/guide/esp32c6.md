@@ -61,12 +61,12 @@ git clone --recursive https://github.com/espressif/esp-idf.git
 cd ~/esp/esp-idf
 ./install.sh esp32c6
 
-# Configurar variables de entorno (agregar al .bashrc o .zshrc)
+# Configurar variables de entorno (agregar al .bashrc)
 . $HOME/esp/esp-idf/export.sh
 ```
 
 ::: tip Automatizar export.sh
-Agrega el comando `. $HOME/esp/esp-idf/export.sh` a tu archivo `~/.bashrc` o `~/.zshrc` para tener ESP-IDF disponible en cada terminal nueva.
+Agrega el comando `. $HOME/esp/esp-idf/export.sh` a tu archivo `~/.bashrc` para tener ESP-IDF disponible en cada terminal nueva.
 :::
 
 ### Windows
@@ -84,28 +84,6 @@ Agrega el comando `. $HOME/esp/esp-idf/export.sh` a tu archivo `~/.bashrc` o `~/
    - Abrir "ESP-IDF PowerShell" o "ESP-IDF CMD" desde el menú inicio
    - Ejecutar: `idf.py --version`
 
-### macOS
-
-```bash
-# Instalar Homebrew si no está instalado
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Instalar dependencias
-brew install cmake ninja dfu-util python3
-
-# Clonar ESP-IDF
-mkdir -p ~/esp
-cd ~/esp
-git clone --recursive https://github.com/espressif/esp-idf.git
-
-# Instalar herramientas
-cd ~/esp/esp-idf
-./install.sh esp32c6
-
-# Configurar variables de entorno
-. $HOME/esp/esp-idf/export.sh
-```
-
 ## Verificar conexión con Pulsar C6
 
 1. **Conectar la placa** al puerto USB
@@ -114,9 +92,6 @@ cd ~/esp/esp-idf
 ```bash
 # Linux
 ls /dev/ttyUSB* /dev/ttyACM*
-
-# macOS
-ls /dev/cu.*
 
 # Windows (PowerShell)
 [System.IO.Ports.SerialPort]::getportnames()
