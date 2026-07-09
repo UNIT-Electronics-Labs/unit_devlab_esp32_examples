@@ -34,7 +34,7 @@ Como I²C es un bus, puedes conectar múltiples dispositivos en paralelo (SDA co
 
 ## Instalación de bibliotecas Arduino
 
-Instala estas librerías desde **Tools > Manage Libraries**:
+Instala estas librerías desde **Herramientas > Administrar bibliotecas**:
 
 - `Adafruit SSD1306`
 - `Adafruit GFX Library`

@@ -92,8 +92,8 @@ avanzada para revisar APIs de bajo nivel o portar proyectos profesionales.
 ### 1. Preparar Arduino IDE
 
 1. Instala Arduino IDE 2.x.
-2. Agrega el paquete de placas ESP32/UNIT Electronics desde **File > Preferences > Additional Boards Manager URLs**.
-3. Instala el paquete desde **Tools > Board > Boards Manager**.
+2. Agrega el paquete de placas ESP32/UNIT Electronics desde **Archivo > Preferencias > Gestor de URLs adicionales de tarjetas**.
+3. Instala el paquete desde **Herramientas > Placa > Gestor de placas**.
 4. Selecciona la placa Pulsar C6 o una placa ESP32-C6 compatible.
 
 ### 2. Crear sketch
@@ -112,13 +112,13 @@ void loop() {
 
 ### 3. Verificar y cargar
 
-- Usa **Sketch > Verify/Compile** para compilar.
-- Usa **Sketch > Upload** para flashear la placa.
-- Abre **Tools > Serial Monitor** a `115200` baudios.
+- Usa **Programa > Verificar/Compilar** para compilar.
+- Usa **Programa > Cargar** para flashear la placa.
+- Abre **Herramientas > Monitor serie** a `115200` baudios.
 
 ### 4. Instalar librerías de laboratorio
 
-Instala librerías desde **Tools > Manage Libraries** conforme las requiera cada
+Instala librerías desde **Herramientas > Administrar bibliotecas** conforme las requiera cada
 práctica, por ejemplo `Adafruit SSD1306`, `DHT sensor library`, `PubSubClient`
 o clientes BLE compatibles.
 
@@ -183,7 +183,7 @@ sudo usermod -a -G dialout $USER
 1. Mantener presionado botón **BOOT**
 2. Presionar y soltar botón **RESET**
 3. Soltar botón **BOOT**
-4. Ejecutar **Upload** nuevamente desde Arduino IDE
+4. Ejecutar **Cargar** nuevamente desde Arduino IDE
 
 ## Próximos pasos
 

@@ -1,12 +1,18 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Placa de desarrollo
 
 ## Diagrama esquemático
 
 <div style="text-align: center;">
-   <button style="background-color: #87cefa; color: white; border: none; padding: 10px 20px;" onclick="window.open('/sphinx-static/nanoc6/Schematics_UNIT NANO_C6_V1_6.pdf', '_blank')">PULSAR C6</button>
+   <a :href="withBase('/sphinx-static/nanoc6/Schematics_UNIT NANO_C6_V1_6.pdf')" target="_blank">
+      <button style="background-color: #87cefa; color: white; border: none; padding: 10px 20px;">PULSAR C6</button>
+   </a>
 </div>
 <br> </br>
-<iframe src="/sphinx-static/nanoc6/Schematics_UNIT NANO_C6_V1_6.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
+<iframe :src="withBase('/sphinx-static/nanoc6/Schematics_UNIT NANO_C6_V1_6.pdf')" style="width:100%; height:500px;" frameborder="0"></iframe>
 <br> </br>
 
 ## Distribución de pinout
@@ -15,10 +21,10 @@
 &#10;
     <br><br>
 &#10;    <!-- Imagen que se puede abrir en una nueva ventana al hacer clic -->
-    <a href="/sphinx-static/nanoc6/Nano-C6-Pinout_EN.jpg" target="_blank">
-        <img 
-            src="/sphinx-static/nanoc6/Nano-C6-Pinout_EN.jpg" 
-            alt="Pinout PULSAR C6" 
+    <a :href="withBase('/sphinx-static/nanoc6/Nano-C6-Pinout_EN.jpg')" target="_blank">
+        <img
+            :src="withBase('/sphinx-static/nanoc6/Nano-C6-Pinout_EN.jpg')"
+            alt="Pinout PULSAR C6"
             style="width: 90%; height: auto; border: 1px solid #ccc; border-radius: 8px;"
         >
     </a>

@@ -6,7 +6,7 @@ Aprovecha el potencial de comunicación de la placa NANO ESP32C6 mediante distin
 
 Aprende a configurar y usar la comunicación Wi-Fi en la placa DualMCU ONE.
 
-``` 
+```
 import machine
 import network
 

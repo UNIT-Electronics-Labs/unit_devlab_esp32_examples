@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # SPI (Serial Peripheral Interface)
 
 ## Descripción general de SPI
@@ -21,8 +25,8 @@ Asegúrate de que la Micro SD contenga datos. Se recomienda guardar varios archi
 <div id="figura-micro-sd-card">
 
 <figure>
-<img src="/sphinx-static/Micro-SD-Card-Pinout.png" class="align-center"
-style="width:40.0%" alt="/sphinx-static/Micro-SD-Card-Pinout.png" />
+<img :src="withBase('/sphinx-static/Micro-SD-Card-Pinout.png')" class="align-center"
+style="width:40.0%" alt="Micro-SD-Card-Pinout.png" />
 <figcaption>Pinout de tarjeta Micro SD</figcaption>
 </figure>
 
@@ -31,8 +35,8 @@ style="width:40.0%" alt="/sphinx-static/Micro-SD-Card-Pinout.png" />
 <div id="figura-micro-sd-card-reader">
 
 <figure>
-<img src="/sphinx-static/Lector-Micro-SD.jpg" class="align-center"
-style="width:40.0%" alt="/sphinx-static/Lector-Micro-SD.jpg" />
+<img :src="withBase('/sphinx-static/Lector-Micro-SD.jpg')" class="align-center"
+style="width:40.0%" alt="Lector-Micro-SD.jpg" />
 <figcaption>Lector externo de tarjeta Micro SD</figcaption>
 </figure>
 
@@ -73,9 +77,9 @@ La librería `SD.h` de Arduino es compatible con tarjetas SD usando comunicació
 **Instalación**
 
 1.  Abre Arduino IDE.
-2.  Ve a **Sketch** -> **Include Library** -> **Manage Libraries**.
+2.  Ve a **Programa > Incluir biblioteca > Administrar bibliotecas**.
 
-3.  Busca `SD` y haz clic en **Install**. También puedes usar la librería SD incluida con Arduino IDE.
+3.  Busca `SD` y haz clic en **Instalar**. También puedes usar la librería SD incluida con Arduino IDE.
 
 ### MicroPython
 
@@ -291,7 +295,7 @@ void app_main(void)
 ```
 
 <figure>
-<img src="/sphinx-static/menuconfig.png" class="align-center"
-style="width:90.0%" alt="/sphinx-static/menuconfig.png" />
+<img :src="withBase('/sphinx-static/menuconfig.png')" class="align-center"
+style="width:90.0%" alt="menuconfig.png" />
 <figcaption>Configuración SD SPI en ESP-IDF Menuconfig</figcaption>
 </figure>

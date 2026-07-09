@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Entorno de escritorio
 
 La configuración del entorno es el primer paso para trabajar con la placa PULSAR C6. Los siguientes pasos te guiarán durante el proceso.
@@ -31,8 +35,8 @@ Para instalar Python, sigue estas instrucciones:
 2.  Ejecuta el instalador y sigue las instrucciones.
 
 <figure>
-<img src="/sphinx-static/python.png" class="align-center"
-style="width:80.0%" alt="/sphinx-static/python.png" />
+<img :src="withBase('/sphinx-static/python.png')" class="align-center"
+style="width:80.0%" alt="python.png" />
 <figcaption>Agregar Python al PATH</figcaption>
 </figure>
 
@@ -87,8 +91,8 @@ Para instalar MinGW, sigue estas instrucciones:
 2.  Ejecuta el instalador y sigue las instrucciones.
 
 <figure>
-<img src="/sphinx-static/mingw.png" class="align-center"
-style="width:80.0%" alt="/sphinx-static/mingw.png" />
+<img :src="withBase('/sphinx-static/mingw.png')" class="align-center"
+style="width:80.0%" alt="mingw.png" />
 <figcaption>Instalador de MinGW</figcaption>
 </figure>
 
@@ -109,8 +113,8 @@ Durante la instalación, asegúrate de seleccionar los siguientes paquetes:
 </div>
 
 <figure>
-<img src="/sphinx-static/mingw2.png" class="align-center"
-style="width:80.0%" alt="/sphinx-static/mingw2.png" />
+<img :src="withBase('/sphinx-static/mingw2.png')" class="align-center"
+style="width:80.0%" alt="mingw2.png" />
 <figcaption>Instalación de MinGW</figcaption>
 </figure>
 
@@ -182,8 +186,8 @@ Para instalar Visual Studio Code, sigue estas instrucciones:
 2.  Ejecuta el instalador y sigue las instrucciones.
 
 <figure>
-<img src="/sphinx-static/vscode.png" class="align-center"
-style="width:80.0%" alt="/sphinx-static/vscode.png" />
+<img :src="withBase('/sphinx-static/vscode.png')" class="align-center"
+style="width:80.0%" alt="vscode.png" />
 <figcaption>Instalador de Visual Studio Code</figcaption>
 </figure>
 
@@ -208,8 +212,8 @@ code --version
 4.  Instala extensiones para Visual Studio Code:
 
     > <figure>
-    > <img src="/sphinx-static/vscode_gf.png" class="align-center"
-    > style="width:80.0%" alt="/sphinx-static/vscode_gf.png" />
+    > <img :src="withBase('/sphinx-static/vscode_gf.png')" class="align-center"
+    > style="width:80.0%" alt="vscode_gf.png" />
     > <figcaption>Extensiones de Visual Studio Code</figcaption>
     > </figure>
 

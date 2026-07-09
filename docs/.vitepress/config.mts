@@ -11,7 +11,7 @@ export default defineConfig({
       { text: 'Inicio', link: '/' },
       { text: 'Guías', link: '/guide/esp32c6' },
       { text: 'Laboratorios', link: '/examples/' },
-      { text: 'Pulsar C6 Getting Started', link: '/pulsar-c6-getting-started/' }
+      { text: 'Primeros pasos con Pulsar C6', link: '/pulsar-c6-getting-started/' }
     ],
     sidebar: [
       {
@@ -46,7 +46,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Pulsar C6 Getting Started',
+        text: 'Primeros pasos con Pulsar C6',
         items: [
           { text: 'Índice', link: '/pulsar-c6-getting-started/' },
           { text: 'Acerca de PULSAR C6', link: '/pulsar-c6-getting-started/00_about' },
@@ -67,10 +67,45 @@ export default defineConfig({
       }
     ],
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: 'Buscar',
+            buttonAriaLabel: 'Buscar'
+          },
+          modal: {
+            displayDetails: 'Mostrar detalles',
+            resetButtonTitle: 'Limpiar búsqueda',
+            backButtonTitle: 'Cerrar búsqueda',
+            noResultsText: 'Sin resultados',
+            footer: {
+              selectText: 'seleccionar',
+              selectKeyAriaLabel: 'entrar',
+              navigateText: 'navegar',
+              navigateUpKeyAriaLabel: 'flecha arriba',
+              navigateDownKeyAriaLabel: 'flecha abajo',
+              closeText: 'cerrar',
+              closeKeyAriaLabel: 'escape'
+            }
+          }
+        }
+      }
     },
     outline: {
       level: [2, 3]
+    },
+    outlineTitle: 'En esta página',
+    darkModeSwitchLabel: 'Apariencia',
+    lightModeSwitchTitle: 'Cambiar a tema claro',
+    darkModeSwitchTitle: 'Cambiar a tema oscuro',
+    sidebarMenuLabel: 'Menú',
+    returnToTopLabel: 'Volver arriba',
+    langMenuLabel: 'Cambiar idioma',
+    skipToContentLabel: 'Saltar al contenido',
+    docFooter: {
+      prev: 'Página anterior',
+      next: 'Página siguiente'
     },
     footer: {
       message: 'Prácticas de adquisición de datos e IoT con ESP32-C6.',

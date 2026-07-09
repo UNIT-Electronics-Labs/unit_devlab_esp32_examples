@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Configuración del entorno
 
 ## Instalación de MicroPython en DualMCU
@@ -17,8 +21,8 @@ Esto permite cargar el firmware en la DualMCU usando [Thonny IDE](https://thonny
 <div id="figure_configure_interpreter">
 
 <figure>
-<img src="/sphinx-static/config_interpreter.png" class="align-center"
-style="width:60.0%" alt="/sphinx-static/config_interpreter.png" />
+<img :src="withBase('/sphinx-static/config_interpreter.png')" class="align-center"
+style="width:60.0%" alt="config_interpreter.png" />
 <figcaption>Configuración del intérprete</figcaption>
 </figure>
 
@@ -32,7 +36,7 @@ Para usar MicroPython se recomienda actualizar el firmware. Sigue estos pasos pa
 
 1.  Inicia tu DualMCU ESP32 presionando el botón FLASH.
 
-2.  Haz clic en **"Install or Update MicroPython"**.
+2.  Haz clic en **"Instalar o actualizar MicroPython"**.
 
 3.  Se abrirá una ventana nueva. Usa la siguiente configuración:
 
@@ -42,14 +46,14 @@ Para usar MicroPython se recomienda actualizar el firmware. Sigue estos pasos pa
 <div id="figure_installer">
 
 <figure>
-<img src="/sphinx-static/installer.png" class="align-center"
-style="width:70.0%" alt="/sphinx-static/installer.png" />
+<img :src="withBase('/sphinx-static/installer.png')" class="align-center"
+style="width:70.0%" alt="installer.png" />
 <figcaption>Configuración del instalador ESP32</figcaption>
 </figure>
 
 </div>
 
-4.  Presiona **Install** y espera a que termine la instalación.
+4.  Presiona **Instalar** y espera a que termine la instalación.
 
 Estos pasos permiten actualizar y configurar correctamente MicroPython en tu DualMCU ESP32.
 
@@ -58,7 +62,7 @@ Estos pasos permiten actualizar y configurar correctamente MicroPython en tu Dua
 Para usar MicroPython se recomienda actualizar el firmware. Sigue estos pasos para actualizar tu DualMCU RP2040:
 
 1.  Inicia tu DualMCU RP2040 presionando el botón FLASH.
-2.  Haz clic en **"Install or Update MicroPython"**.
+2.  Haz clic en **"Instalar o actualizar MicroPython"**.
 
 3.  Se abrirá una ventana nueva. Usa la siguiente configuración:
 
@@ -68,14 +72,14 @@ Para usar MicroPython se recomienda actualizar el firmware. Sigue estos pasos pa
 <div id="figure_rp2040_installer">
 
 <figure>
-<img src="/sphinx-static/rp2040_installer.png" class="align-center"
-style="width:70.0%" alt="/sphinx-static/rp2040_installer.png" />
+<img :src="withBase('/sphinx-static/rp2040_installer.png')" class="align-center"
+style="width:70.0%" alt="rp2040_installer.png" />
 <figcaption>Configuración del instalador RP2040</figcaption>
 </figure>
 
 </div>
 
-4.  Presiona **Install** y espera a que termine la instalación.
+4.  Presiona **Instalar** y espera a que termine la instalación.
 
 Estos pasos permiten actualizar y configurar correctamente MicroPython en tu DualMCU ESP32.
 
@@ -88,8 +92,8 @@ Una vez configurado el entorno, abre Thonny y ejecuta el ejemplo siguiendo estos
 <div id="figure_select_interpreter">
 
 <figure>
-<img src="/sphinx-static/esp32_thonny.png" class="align-center"
-style="width:60.0%" alt="/sphinx-static/esp32_thonny.png" />
+<img :src="withBase('/sphinx-static/esp32_thonny.png')" class="align-center"
+style="width:60.0%" alt="esp32_thonny.png" />
 <figcaption>Intérprete ESP32</figcaption>
 </figure>
 
@@ -104,7 +108,7 @@ Dentro de la carpeta **Examples** encontrarás un ejemplo básico llamado "blink
 Unit Electronics 2023
        (o_
 (o_    //\
-(/)_   V_/_ 
+(/)_   V_/_
 
 version: 0.0.1
 revision: 0.0.1
@@ -119,14 +123,14 @@ led_pin3 = machine.Pin(25, machine.Pin.OUT)
 
 def loop():
      while True:
-        led_pin.on()    
-        led_pin2.on()   
-        led_pin3.on()  
-        time.sleep(1)  
-        led_pin.off()   
-        led_pin2.off()  
-        led_pin3.off()  
-        time.sleep(1)   
+        led_pin.on()
+        led_pin2.on()
+        led_pin3.on()
+        time.sleep(1)
+        led_pin.off()
+        led_pin2.off()
+        led_pin3.off()
+        time.sleep(1)
 
 loop()
 ```
@@ -148,37 +152,37 @@ Consulta <https://github.com/UNIT-Electronics/DualMCU> y sus ejemplos para infor
 - Raspberry Pi Pico W
 - Generic (flash y pines de E/S configurables)
 
-## Instalación desde Arduino Boards Manager
+## Instalación desde el gestor de placas de Arduino
 
-Abre Arduino IDE y ve a File -> Preferences.
+Abre Arduino IDE y ve a **Archivo > Preferencias**.
 
-En el cuadro de diálogo, ingresa la siguiente URL en el campo "Additional Boards Manager URLs":
+En el cuadro de diálogo, ingresa la siguiente URL en el campo **Gestor de URLs adicionales de tarjetas**:
 
 <https://github.com/UNIT-Electronics/Uelectronics-RP2040-Arduino-Package/releases/download/v1.0.0/package_Uelectronics_rp2040_index.json>
 
 <div id="figure_AditionalBoardsManagerURL">
 
 <figure>
-<img src="/sphinx-static/AditionalBoardsManagerURL.png"
+<img :src="withBase('/sphinx-static/AditionalBoardsManagerURL.png')"
 class="align-center" style="width:60.0%"
-alt="/sphinx-static/AditionalBoardsManagerURL.png" />
-<figcaption>Preferencias: Additional Boards Manager URL</figcaption>
+alt="AditionalBoardsManagerURL.png" />
+<figcaption>Preferencias: URL adicional del gestor de placas</figcaption>
 </figure>
 
 </div>
 
 Presiona OK para cerrar el cuadro de diálogo.
 
-Ve a Tools -> Boards -> Board Manager en el IDE.
+Ve a **Herramientas > Placas > Gestor de placas** en el IDE.
 
 Escribe "DualMCU" en el cuadro de búsqueda y selecciona "Add":
 
 <div id="figure_BoardsManager">
 
 <figure>
-<img src="/sphinx-static/BoardsManager.png" class="align-center"
-style="width:60.0%" alt="/sphinx-static/BoardsManager.png" />
-<figcaption>BoardsManager</figcaption>
+<img :src="withBase('/sphinx-static/BoardsManager.png')" class="align-center"
+style="width:60.0%" alt="BoardsManager.png" />
+<figcaption>Gestor de placas</figcaption>
 </figure>
 
 </div>
@@ -197,20 +201,20 @@ El paquete incluye ejemplos de código para comenzar a programar el ESP32 y crea
 - ESP32C3 Dev Module
 - ESP32S2 Dev Module
 
-## Instalación desde Arduino Boards Manager
+## Instalación desde el gestor de placas de Arduino
 
-Abre Arduino IDE y ve a File -> Preferences.
+Abre Arduino IDE y ve a **Archivo > Preferencias**.
 
 - Enlace de versión estable:
   `https://github.com/UNIT-Electronics/Uelectronics-ESP32-Arduino-Package/releases/download/v1.0.0/package_Uelectronics_ESP32_index.json`
 
-Arduino permite instalar paquetes de plataformas de terceros mediante Boards Manager.
+Arduino permite instalar paquetes de plataformas de terceros mediante el gestor de placas.
 
 - Instala Arduino IDE 1.8 o superior. La versión actual está disponible en el [sitio web de Arduino](http://www.arduino.cc/en/main/software).
 - Inicia Arduino y abre la ventana de preferencias.
 
-- Ingresa uno de los enlaces anteriores en el campo *Additional Board Manager URLs*. Puedes agregar varias URLs separadas por comas.
-- Abre Boards Manager desde Tools > Board e instala la plataforma *esp32*. Después de instalarla, selecciona tu placa ESP32 desde Tools > Board.
+- Ingresa uno de los enlaces anteriores en el campo *Gestor de URLs adicionales de tarjetas*. Puedes agregar varias URLs separadas por comas.
+- Abre el gestor de placas desde **Herramientas > Placa** e instala la plataforma *esp32*. Después de instalarla, selecciona tu placa ESP32 desde **Herramientas > Placa**.
 
 ### Soporte
 

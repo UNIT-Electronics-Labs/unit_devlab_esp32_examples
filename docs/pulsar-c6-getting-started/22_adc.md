@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Conversión analógica a digital
 
 Aprende a leer valores de sensores analógicos usando el módulo ADC de la placa **PULSAR C6** con ESP32-C6. Esta sección cubre los fundamentos de entrada analógica y técnicas de conversión.
@@ -90,7 +94,7 @@ adc = machine.ADC(machine.Pin(0))  # Initialize pin GPIO0 for ADC
 while True:
     adc_value = adc.read_u16()        # Read the ADC value
     print(f"ADC Reading: {adc_value:.2f}")  # Print the ADC value
-    time.sleep(1)                     # Delay for 1 second   
+    time.sleep(1)                     # Delay for 1 second
 ```
 
 ### C++
@@ -151,8 +155,8 @@ void app_main(void)
 <div id="figure_adc">
 
 <figure>
-<img src="/sphinx-static/nanoc6/adc.png" class="align-center"
-style="width:95.0%" alt="/sphinx-static/nanoc6/adc.png" />
+<img :src="withBase('/sphinx-static/nanoc6/adc.png')" class="align-center"
+style="width:95.0%" alt="adc.png" />
 <figcaption>Ejemplo de entrada ADC0 en la placa <strong>PULSAR C6</strong>.</figcaption>
 </figure>
 

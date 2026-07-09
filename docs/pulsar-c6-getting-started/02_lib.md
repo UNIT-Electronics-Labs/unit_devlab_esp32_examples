@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Instalación de paquetes - MicroPython
 
 Esta sección te guía durante la instalación de las librerías requeridas usando el gestor de paquetes [pip](https://pip.pypa.io/en/stable/).
@@ -60,7 +64,7 @@ mip.install('https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_devlab_m
 ```
 
 <figure>
-<img src="/sphinx-static/libraries.png" class="align-center"
-style="width:100.0%" alt="/sphinx-static/libraries.png" />
+<img :src="withBase('/sphinx-static/libraries.png')" class="align-center"
+style="width:100.0%" alt="libraries.png" />
 <figcaption>Instalación de librerías con MIP</figcaption>
 </figure>

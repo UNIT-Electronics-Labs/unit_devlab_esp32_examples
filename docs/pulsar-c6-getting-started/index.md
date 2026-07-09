@@ -1,4 +1,4 @@
-# Pulsar C6 Getting Started
+# Primeros pasos con Pulsar C6
 
 Esta sección reúne los pasos iniciales para preparar la placa Pulsar C6,
 revisar su pinout, configurar el entorno de desarrollo y probar periféricos

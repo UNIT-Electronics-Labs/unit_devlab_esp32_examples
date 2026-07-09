@@ -10,7 +10,7 @@ hero:
       text: Ver prácticas
       link: /examples/
     - theme: alt
-      text: Pulsar C6 Getting Started
+      text: Primeros pasos con Pulsar C6
       link: /pulsar-c6-getting-started/
 
 features:
@@ -30,7 +30,7 @@ features:
 - [Configurar ESP32-C6 y Pulsar C6](./guide/esp32c6.md) ⭐
 - [Guía de ESP-IDF](./guide/esp-idf.md)
 - [Guía para Windows](./pulsar-c6-getting-started/01_setup.md)
-- [Pulsar C6 Getting Started](./pulsar-c6-getting-started/)
+- [Primeros pasos con Pulsar C6](./pulsar-c6-getting-started/)
 
 ### Conceptos teóricos
 - [Adquisición de datos](./guide/data-acquisition.md)

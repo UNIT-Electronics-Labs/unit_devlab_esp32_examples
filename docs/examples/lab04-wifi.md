@@ -21,7 +21,7 @@ En esta práctica aprenderás a conectar el ESP32-C6 a Wi-Fi y publicar datos de
 ## Código base Arduino
 
 Este sketch conecta la Pulsar C6 a Wi-Fi y publica temperatura/humedad del DHT11
-por HTTP. Instala `DHT sensor library` desde **Tools > Manage Libraries**.
+por HTTP. Instala `DHT sensor library` desde **Herramientas > Administrar bibliotecas**.
 
 ```cpp
 #include <WiFi.h>

@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Pines de entrada/salida de propósito general (GPIO)
 
 Los pines GPIO (entrada/salida de propósito general) de la placa **PULSAR C6** se utilizan para conectar dispositivos externos al microcontrolador. Estos pines pueden configurarse como entrada o salida. En esta sección se muestra cómo trabajar con GPIO usando MicroPython y C++.
@@ -5,8 +9,8 @@ Los pines GPIO (entrada/salida de propósito general) de la placa **PULSAR C6** 
 <div id="figura2-dualmcu-one">
 
 <figure>
-<img src="/sphinx-static/nanoc6/top.png" class="align-center"
-style="width:60.0%" alt="/sphinx-static/nanoc6/top.png" />
+<img :src="withBase('/sphinx-static/nanoc6/top.png')" class="align-center"
+style="width:60.0%" alt="top.png" />
 <figcaption>Placa de desarrollo <strong>PULSAR C6</strong></figcaption>
 </figure>
 

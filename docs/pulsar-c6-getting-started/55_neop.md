@@ -1,3 +1,7 @@
+<script setup>
+import { withBase } from 'vitepress'
+</script>
+
 # Control de WS2812
 
 Aprovecha las tiras LED WS2812 con la placa PULSAR C6. Aprende a controlar LEDs RGB y crear efectos de iluminación usando MicroPython.
@@ -13,8 +17,8 @@ Mapeo de pines para WS2812
 <div id="figura-PULSAR  C6-one">
 
 <figure>
-<img src="/sphinx-static/WS1280_LED.jpg" class="align-center"
-style="width:40.0%" alt="/sphinx-static/WS1280_LED.jpg" />
+<img :src="withBase('/sphinx-static/WS1280_LED.jpg')" class="align-center"
+style="width:40.0%" alt="WS1280_LED.jpg" />
 <figcaption>Tira LED WS2812</figcaption>
 </figure>
 
