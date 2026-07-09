@@ -26,6 +26,40 @@ El ADC del ESP32-C6 tiene las siguientes características:
 - **Canales**: 7 (GPIO0-GPIO6)
 - **Rango**: 0-2.5V (con atenuación 11dB)
 
+## Código base Arduino
+
+Este sketch lee el potenciómetro por GPIO0 y muestra el valor crudo y el voltaje
+estimado en el monitor serial.
+
+```cpp
+const int POT_PIN = 0;
+const float ADC_MAX = 4095.0;
+const float VREF = 3.3;
+
+void setup() {
+  Serial.begin(115200);
+  analogReadResolution(12);
+}
+
+void loop() {
+  int raw = analogRead(POT_PIN);
+  float voltage = (raw / ADC_MAX) * VREF;
+
+  Serial.print("ADC: ");
+  Serial.print(raw);
+  Serial.print("  Voltaje: ");
+  Serial.print(voltage, 3);
+  Serial.println(" V");
+
+  delay(500);
+}
+```
+
+Para LM35, LDR o múltiples sensores, cambia el pin de lectura y aplica la
+conversión correspondiente en `loop()`.
+
+## Referencia avanzada ESP-IDF
+
 ## Práctica 1: Lectura de potenciómetro
 
 ### Conexiones
@@ -430,6 +464,7 @@ void app_main(void)
 
 ## Referencias
 
-- [ESP32-C6 ADC](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/adc_oneshot.html)
+- [Arduino analogRead](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogRead/)
 - [LM35 Datasheet](https://www.ti.com/lit/ds/symlink/lm35.pdf)
-- [ADC Calibration](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/adc_calibration.html)
+- [ESP32-C6 ADC](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/adc_oneshot.html) - referencia avanzada
+- [ADC Calibration](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/adc_calibration.html) - referencia avanzada

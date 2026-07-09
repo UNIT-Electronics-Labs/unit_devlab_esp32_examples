@@ -32,16 +32,59 @@ GPIO7 (SCL)           SCL             SCL
 Como I²C es un bus, puedes conectar múltiples dispositivos en paralelo (SDA con SDA, SCL con SCL).
 :::
 
-## Instalación de biblioteca
+## Instalación de bibliotecas Arduino
 
-Usaremos la biblioteca SSD1306 de ESP-IDF components:
+Instala estas librerías desde **Tools > Manage Libraries**:
 
-```bash
-cd tu_proyecto
-idf.py add-dependency "espressif/esp_lcd_ssd1306"
+- `Adafruit SSD1306`
+- `Adafruit GFX Library`
+- `Adafruit BME280 Library` si quieres integrar el sensor del Lab 1
+
+## Código base Arduino
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+const int SDA_PIN = 6;
+const int SCL_PIN = 7;
+
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(SDA_PIN, SCL_PIN);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("No se encontro OLED SSD1306 en 0x3C");
+    while (true) delay(10);
+  }
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 0);
+  display.println("Pulsar C6");
+  display.println("OLED lista");
+  display.display();
+}
+
+void loop() {
+  static int counter = 0;
+
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.println("Lab 2 OLED");
+  display.print("Contador: ");
+  display.println(counter++);
+  display.display();
+
+  delay(1000);
+}
 ```
 
-## Código base
+## Referencia avanzada ESP-IDF
 
 ### CMakeLists.txt del proyecto
 
@@ -367,6 +410,8 @@ void display_text(const char *text)
 
 ## Referencias
 
+- [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
+- [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
 - [SSD1306 Datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf)
-- [LVGL for ESP32](https://docs.lvgl.io/latest/en/html/get-started/espressif.html)
 - [u8g2 Library](https://github.com/olikraus/u8g2)
+- [LVGL for ESP32](https://docs.lvgl.io/latest/en/html/get-started/espressif.html) - referencia avanzada

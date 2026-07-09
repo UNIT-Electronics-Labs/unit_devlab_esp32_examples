@@ -11,7 +11,7 @@ export default defineConfig({
       { text: 'Inicio', link: '/' },
       { text: 'Guías', link: '/guide/esp32c6' },
       { text: 'Laboratorios', link: '/examples/' },
-      { text: 'Sphinx migrado', link: '/sphinx-migrated/' }
+      { text: 'Pulsar C6 Getting Started', link: '/pulsar-c6-getting-started/' }
     ],
     sidebar: [
       {
@@ -46,23 +46,23 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Migrado desde Sphinx',
+        text: 'Pulsar C6 Getting Started',
         items: [
-          { text: 'Índice', link: '/sphinx-migrated/' },
-          { text: 'Acerca de PULSAR C6', link: '/sphinx-migrated/00_about' },
-          { text: 'Configuración de escritorio', link: '/sphinx-migrated/01_setup' },
-          { text: 'Librerías MicroPython', link: '/sphinx-migrated/02_lib' },
-          { text: 'ESP-IDF original', link: '/sphinx-migrated/02_1_esp-idf' },
-          { text: 'Pinout y esquemático', link: '/sphinx-migrated/03_pinout' },
-          { text: 'GPIO', link: '/sphinx-migrated/11_gpio' },
-          { text: 'ADC', link: '/sphinx-migrated/22_adc' },
-          { text: 'I²C', link: '/sphinx-migrated/33_i2c' },
-          { text: 'SPI y Micro SD', link: '/sphinx-migrated/44_spi' },
-          { text: 'WS2812 / NeoPixel', link: '/sphinx-migrated/55_neop' },
-          { text: 'Comunicación', link: '/sphinx-migrated/66_communication' },
-          { text: 'Conector JST SH', link: '/sphinx-migrated/jst' },
-          { text: 'Entorno Arduino/MicroPython', link: '/sphinx-migrated/env' },
-          { text: 'Reporte de errores', link: '/sphinx-migrated/report' }
+          { text: 'Índice', link: '/pulsar-c6-getting-started/' },
+          { text: 'Acerca de PULSAR C6', link: '/pulsar-c6-getting-started/00_about' },
+          { text: 'Configuración de escritorio', link: '/pulsar-c6-getting-started/01_setup' },
+          { text: 'Librerías MicroPython', link: '/pulsar-c6-getting-started/02_lib' },
+          { text: 'ESP-IDF avanzado', link: '/pulsar-c6-getting-started/02_1_esp-idf' },
+          { text: 'Pinout y esquemático', link: '/pulsar-c6-getting-started/03_pinout' },
+          { text: 'GPIO', link: '/pulsar-c6-getting-started/11_gpio' },
+          { text: 'ADC', link: '/pulsar-c6-getting-started/22_adc' },
+          { text: 'I²C', link: '/pulsar-c6-getting-started/33_i2c' },
+          { text: 'SPI y Micro SD', link: '/pulsar-c6-getting-started/44_spi' },
+          { text: 'WS2812 / NeoPixel', link: '/pulsar-c6-getting-started/55_neop' },
+          { text: 'Comunicación', link: '/pulsar-c6-getting-started/66_communication' },
+          { text: 'Conector JST SH', link: '/pulsar-c6-getting-started/jst' },
+          { text: 'Entorno Arduino/MicroPython', link: '/pulsar-c6-getting-started/env' },
+          { text: 'Reporte de errores', link: '/pulsar-c6-getting-started/report' }
         ]
       }
     ],

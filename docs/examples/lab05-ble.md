@@ -36,6 +36,60 @@ Servicio (Service)
 └── Característica 2
 ```
 
+## Código base Arduino
+
+Este sketch crea un servidor BLE sencillo con una característica de lectura.
+Desde nRF Connect o LightBlue busca `PulsarC6-BLE` y lee la característica.
+
+```cpp
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
+
+const char* DEVICE_NAME = "PulsarC6-BLE";
+const char* SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
+const char* TEMP_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
+
+BLECharacteristic* tempCharacteristic;
+
+void setup() {
+  Serial.begin(115200);
+
+  BLEDevice::init(DEVICE_NAME);
+  BLEServer* server = BLEDevice::createServer();
+  BLEService* service = server->createService(SERVICE_UUID);
+
+  tempCharacteristic = service->createCharacteristic(
+    TEMP_UUID,
+    BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY
+  );
+  tempCharacteristic->addDescriptor(new BLE2902());
+  tempCharacteristic->setValue("24.5 C");
+
+  service->start();
+  BLEAdvertising* advertising = BLEDevice::getAdvertising();
+  advertising->addServiceUUID(SERVICE_UUID);
+  advertising->start();
+
+  Serial.println("BLE listo. Busca PulsarC6-BLE desde el telefono.");
+}
+
+void loop() {
+  static float temperature = 24.5;
+  temperature += 0.1;
+
+  String value = String(temperature, 1) + " C";
+  tempCharacteristic->setValue(value.c_str());
+  tempCharacteristic->notify();
+
+  Serial.println(value);
+  delay(2000);
+}
+```
+
+## Referencia avanzada ESP-IDF
+
 ## Práctica 1: BLE Beacon (Advertising)
 
 El modo más simple: solo transmite datos sin conexión.
@@ -469,7 +523,8 @@ esp_ble_gap_set_security_param(ESP_BLE_SM_IOCAP_MODE, &iocap, sizeof(uint8_t));
 
 ## Referencias
 
-- [ESP32-C6 BLE](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/bluetooth/esp_gap_ble.html)
-- [BLE GATT Specification](https://www.bluetooth.com/specifications/specs/core-specification-5-3/)
+- [Arduino BLE library](https://docs.arduino.cc/libraries/arduinoble/)
 - [nRF Connect App](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile)
+- [BLE GATT Specification](https://www.bluetooth.com/specifications/specs/core-specification-5-3/)
 - [Bluetooth SIG](https://www.bluetooth.com/)
+- [ESP32-C6 BLE](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/bluetooth/esp_gap_ble.html) - referencia avanzada

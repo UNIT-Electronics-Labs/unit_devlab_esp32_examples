@@ -17,6 +17,57 @@ En esta práctica aprenderás a conectar el ESP32-C6 a Wi-Fi y publicar datos de
 - Red Wi-Fi disponible
 - Cuenta en ThingSpeak (gratuita)
 
+## Código base Arduino
+
+Este sketch conecta la Pulsar C6 a Wi-Fi y publica una lectura simulada por HTTP.
+Instala librerías adicionales solo si vas a usar MQTT (`PubSubClient`) o sensores.
+
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+const char* WIFI_SSID = "TU_RED_WIFI";
+const char* WIFI_PASS = "TU_CONTRASENA";
+const char* THINGSPEAK_API_KEY = "TU_API_KEY_AQUI";
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+  Serial.print("Conectando a Wi-Fi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  if (WiFi.status() == WL_CONNECTED) {
+    float temperature = 24.5;
+    String url = "http://api.thingspeak.com/update?api_key=";
+    url += THINGSPEAK_API_KEY;
+    url += "&field1=";
+    url += String(temperature, 2);
+
+    HTTPClient http;
+    http.begin(url);
+    int status = http.GET();
+
+    Serial.print("HTTP status: ");
+    Serial.println(status);
+    http.end();
+  }
+
+  delay(20000);
+}
+```
+
+## Referencia avanzada ESP-IDF
+
 ## Práctica 1: Conexión Wi-Fi básica
 
 ### Código: Conectar a Wi-Fi
@@ -480,7 +531,9 @@ Para producción, siempre usa:
 
 ## Referencias
 
-- [ESP-IDF Wi-Fi](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/network/esp_wifi.html)
-- [ESP-IDF HTTP Client](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/protocols/esp_http_client.html)
-- [ESP-MQTT](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/protocols/mqtt.html)
+- [Arduino WiFi library](https://docs.arduino.cc/libraries/wifi/)
+- [PubSubClient](https://pubsubclient.knolleary.net/)
 - [ThingSpeak API](https://www.mathworks.com/help/thingspeak/rest-api.html)
+- [ESP-IDF Wi-Fi](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/network/esp_wifi.html) - referencia avanzada
+- [ESP-IDF HTTP Client](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/protocols/esp_http_client.html) - referencia avanzada
+- [ESP-MQTT](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/protocols/mqtt.html) - referencia avanzada

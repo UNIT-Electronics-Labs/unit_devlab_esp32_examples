@@ -10,8 +10,8 @@ hero:
       text: Ver prácticas
       link: /examples/
     - theme: alt
-      text: Configurar ESP32-C6
-      link: /guide/esp32c6
+      text: Pulsar C6 Getting Started
+      link: /pulsar-c6-getting-started/
 
 features:
   - title: Adquisición de datos
@@ -29,8 +29,8 @@ features:
 ### Configuración
 - [Configurar ESP32-C6 y Pulsar C6](./guide/esp32c6.md) ⭐
 - [Guía de ESP-IDF](./guide/esp-idf.md)
-- [Guía para Windows](./sphinx-migrated/01_setup.md)
-- [Documentación migrada desde Sphinx](./sphinx-migrated/)
+- [Guía para Windows](./pulsar-c6-getting-started/01_setup.md)
+- [Pulsar C6 Getting Started](./pulsar-c6-getting-started/)
 
 ### Conceptos teóricos
 - [Adquisición de datos](./guide/data-acquisition.md)

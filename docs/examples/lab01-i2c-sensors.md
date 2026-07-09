@@ -34,7 +34,84 @@ GPIO7 (SCL)           SCL
 La mayoría de los módulos BME280 ya incluyen resistencias pull-up integradas. Si tu módulo no las tiene, agrega resistencias de 4.7kΩ entre VCC y SDA, y entre VCC y SCL.
 :::
 
-## Código base
+## Código base Arduino
+
+Instala las librerías `Adafruit BME280 Library` y `Adafruit Unified Sensor`
+desde **Tools > Manage Libraries**.
+
+### Parte 1: Escaneo de dispositivos I²C
+
+```cpp
+#include <Wire.h>
+
+const int SDA_PIN = 6;
+const int SCL_PIN = 7;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(SDA_PIN, SCL_PIN);
+  Serial.println("Escaneando bus I2C...");
+}
+
+void loop() {
+  byte count = 0;
+
+  for (byte address = 1; address < 127; address++) {
+    Wire.beginTransmission(address);
+    if (Wire.endTransmission() == 0) {
+      Serial.print("Dispositivo encontrado en 0x");
+      if (address < 16) Serial.print("0");
+      Serial.println(address, HEX);
+      count++;
+      delay(10);
+    }
+  }
+
+  Serial.print("Total de dispositivos: ");
+  Serial.println(count);
+  delay(5000);
+}
+```
+
+### Parte 2: Lectura del BME280
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_BME280.h>
+
+const int SDA_PIN = 6;
+const int SCL_PIN = 7;
+
+Adafruit_BME280 bme;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(SDA_PIN, SCL_PIN);
+
+  if (!bme.begin(0x76, &Wire)) {
+    Serial.println("No se encontro BME280 en 0x76. Prueba 0x77.");
+    while (true) delay(10);
+  }
+}
+
+void loop() {
+  Serial.print("Temperatura: ");
+  Serial.print(bme.readTemperature());
+  Serial.println(" C");
+
+  Serial.print("Humedad: ");
+  Serial.print(bme.readHumidity());
+  Serial.println(" %");
+
+  Serial.print("Presion: ");
+  Serial.print(bme.readPressure() / 100.0F);
+  Serial.println(" hPa");
+
+  delay(2000);
+}
+```
+
+## Referencia avanzada ESP-IDF
 
 ### Parte 1: Escaneo de dispositivos I²C
 
@@ -282,6 +359,7 @@ Implementa un filtro de promediado móvil de 10 muestras para suavizar las lectu
 
 ## Referencias
 
+- [Adafruit BME280 Library](https://github.com/adafruit/Adafruit_BME280_Library)
 - [BME280 Datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf)
-- [ESP32-C6 I²C Driver](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/i2c.html)
 - [Bosch BME280 Driver](https://github.com/boschsensortec/BME280_SensorAPI)
+- [ESP32-C6 I²C Driver](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/api-reference/peripherals/i2c.html) - referencia avanzada
