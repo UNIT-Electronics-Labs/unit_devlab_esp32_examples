@@ -61,7 +61,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cd docs/.vitepress/dist
+          deploy_dir="$(mktemp -d)"
+          mkdir -p "${deploy_dir}/docs"
+          cp -a docs/.vitepress/dist/. "${deploy_dir}/docs/"
+
+          cd "${deploy_dir}"
           git init
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
