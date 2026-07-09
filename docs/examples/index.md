@@ -16,8 +16,8 @@ Este repositorio contiene prácticas de adquisición de datos e IoT para ESP32-C
 Aprende a leer sensores digitales mediante el protocolo I²C. Incluye:
 - Configuración del bus I²C
 - Scanner de dispositivos
-- Lectura del sensor BME280 (temperatura, presión, humedad)
-- Calibración y filtrado
+- Identificación del módulo BMI270 por I²C
+- Lectura base para integrar sensores QWIIC
 
 **Duración estimada**: 2 horas  
 **Dificultad**: ⭐⭐☆☆☆
@@ -28,8 +28,8 @@ Aprende a leer sensores digitales mediante el protocolo I²C. Incluye:
 Visualiza datos de sensores en una pantalla OLED SSD1306. Incluye:
 - Configuración de pantalla I²C
 - Dibujo de texto y gráficos
-- Uso de LVGL para interfaces
-- Dashboard de sensores en tiempo real
+- Dashboard simple con datos del TMP235 o DHT11
+- Integración con el bus QWIIC
 
 **Duración estimada**: 2-3 horas  
 **Dificultad**: ⭐⭐⭐☆☆
@@ -39,9 +39,9 @@ Visualiza datos de sensores en una pantalla OLED SSD1306. Incluye:
 ### [Lab 3: ADC Analógico](./lab03-adc.md)
 Convierte señales analógicas usando el ADC del ESP32-C6. Incluye:
 - Configuración del ADC
-- Lectura de potenciómetro, LM35, fotoresistencia
+- Lectura del sensor TMP235
 - Calibración para mayor precisión
-- Filtrado de ruido (mediana, paso bajo)
+- Filtrado de ruido y conversión a temperatura
 
 **Duración estimada**: 2-3 horas  
 **Dificultad**: ⭐⭐⭐☆☆
@@ -66,7 +66,7 @@ Comunícate con dispositivos móviles mediante Bluetooth LE. Incluye:
 - iBeacon advertising
 - Servidor GATT (lectura/escritura)
 - Notificaciones BLE
-- Control de LED desde smartphone
+- Lectura y notificación del sensor táctil TTP223B
 - Bajo consumo de energía
 
 **Duración estimada**: 3-4 horas  
@@ -119,8 +119,25 @@ void loop() {
 ### 4. Instalar librerías de laboratorio
 
 Instala librerías desde **Tools > Manage Libraries** conforme las requiera cada
-práctica, por ejemplo `Adafruit BME280`, `Adafruit SSD1306`, `PubSubClient` o
-clientes BLE compatibles.
+práctica, por ejemplo `Adafruit SSD1306`, `DHT sensor library`, `PubSubClient`
+o clientes BLE compatibles.
+
+## Material disponible
+
+| Producto | SKU | Uso sugerido |
+|----------|-----|--------------|
+| DevLab: Multi Hub Shield | AR5437 | Base de conexión para prácticas |
+| Cargador de Carga Rápida 40W US + Cable Tipo C | AR3448 | Alimentación y programación |
+| Cables Dupont Largos 20cm HH | AR0002 | Conexiones en protoboard |
+| Cables Dupont Largos 20cm MM | AR0004 | Conexiones en protoboard |
+| Protoboard 400 puntos blanco | AR0070 | Montaje de circuitos |
+| Arnés QWIIC hembra-hembra 4 pines | AR4561 | Conexión I²C/QWIIC |
+| Arnés QWIIC Dupont hembra-macho 4 pines | AR4562 | Conexión I²C a protoboard |
+| Display OLED blanco 128x64 0.96" I²C SSD1306 | AR1851 | Lab 2 |
+| TMP235 sensor de temperatura analógico | AR5066 | Lab 3 y Lab 4 |
+| TTP223B sensor capacitivo touch | AR5065 | Lab 5 |
+| BMI270 sensor inercial IMU 6DoF I²C/SPI | AR4733 | Lab 1 |
+| DHT11 sensor de temperatura y humedad KY-015 | AR0033 | Lab 4 |
 
 ## Componentes comunes
 
@@ -128,12 +145,12 @@ Estos componentes se usan en múltiples laboratorios:
 
 | Componente | Usado en | Notas |
 |------------|----------|-------|
-| BME280 | Lab 1, 2, 4 | Sensor I²C temperatura/humedad/presión |
+| BMI270 | Lab 1 | IMU 6DoF I²C/SPI |
 | OLED SSD1306 | Lab 2 | Pantalla 128x64 I²C |
-| Potenciómetro 10kΩ | Lab 3 | Entrada analógica variable |
-| LM35 | Lab 3 | Sensor temperatura analógico |
-| LDR + Resistencia 10kΩ | Lab 3 | Fotoresistencia |
-| LED | Lab 1, 5 | Indicador visual |
+| TMP235 | Lab 3, 4 | Sensor de temperatura analógico |
+| DHT11 KY-015 | Lab 4 | Sensor de temperatura y humedad |
+| TTP223B | Lab 5 | Sensor táctil capacitivo |
+| Multi Hub Shield | Todos | Base de conexión para módulos |
 | Smartphone | Lab 4, 5 | Con apps nRF Connect, MQTT |
 
 ## Recursos adicionales
@@ -147,7 +164,6 @@ Estos componentes se usan en múltiples laboratorios:
 
 ### Datasheets
 - [ESP32-C6 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf)
-- [BME280 Datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf)
 - [SSD1306 Datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf)
 
 ## Solución de problemas generales
