@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: process.env.BASE_PATH || '/',
   title: 'ESP32-C6 Pulsar Labs',
   description: 'Documentación de adquisición de datos e IoT con ESP32-C6 y Pulsar C6.',
   lang: 'es-MX',
