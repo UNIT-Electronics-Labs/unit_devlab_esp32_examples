@@ -10,7 +10,7 @@ SPI (Serial Peripheral Interface) es un protocolo de comunicación serial síncr
 | **Topología** | Maestro-esclavo (un maestro, múltiples esclavos) |
 | **Velocidad** | Hasta 80 MHz en ESP32-C6 |
 | **Modo** | Full-duplex (envío y recepción simultánea) |
-| **Distancia** | <3 metros típico |
+| **Distancia** | < 3 metros típico |
 
 ## Ventajas e inconvenientes
 
@@ -396,7 +396,7 @@ void sd_card_init(void)
 | **Velocidad** | 100 kHz - 1 MHz | Hasta 80 MHz |
 | **Pines** | 2 (SDA, SCL) | 4+ (MOSI, MISO, SCK, CS...) |
 | **Topología** | Multi-maestro | Un maestro |
-| **Distancia** | <1 metro | <3 metros |
+| **Distancia** | < 1 metro | < 3 metros |
 | **Uso típico** | Sensores | Pantallas, SD, RF |
 
 ## Solución de problemas

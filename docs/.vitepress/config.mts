@@ -22,6 +22,26 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Primeros pasos con Pulsar C6',
+        items: [
+          { text: 'Índice', link: '/pulsar-c6-getting-started/' },
+          { text: 'Acerca de PULSAR C6', link: '/pulsar-c6-getting-started/00_about' },
+          { text: 'Configuración de escritorio', link: '/pulsar-c6-getting-started/01_setup' },
+          { text: 'Librerías MicroPython', link: '/pulsar-c6-getting-started/02_lib' },
+          { text: 'ESP-IDF avanzado', link: '/pulsar-c6-getting-started/02_1_esp-idf' },
+          { text: 'Pinout y esquemático', link: '/pulsar-c6-getting-started/03_pinout' },
+          { text: 'GPIO', link: '/pulsar-c6-getting-started/11_gpio' },
+          { text: 'ADC', link: '/pulsar-c6-getting-started/22_adc' },
+          { text: 'I²C', link: '/pulsar-c6-getting-started/33_i2c' },
+          { text: 'SPI y Micro SD', link: '/pulsar-c6-getting-started/44_spi' },
+          { text: 'WS2812 / NeoPixel', link: '/pulsar-c6-getting-started/55_neop' },
+          { text: 'Comunicación', link: '/pulsar-c6-getting-started/66_communication' },
+          { text: 'Conector JST SH', link: '/pulsar-c6-getting-started/jst' },
+          { text: 'Entorno Arduino/MicroPython', link: '/pulsar-c6-getting-started/env' },
+          { text: 'Reporte de errores', link: '/pulsar-c6-getting-started/report' }
+        ]
+      },
+      {
         text: 'Conceptos Teóricos',
         items: [
           { text: 'Adquisición de Datos', link: '/guide/data-acquisition' },
@@ -45,26 +65,6 @@ export default defineConfig({
           { text: 'Lab 5: Bluetooth LE', link: '/examples/lab05-ble' }
         ]
       },
-      {
-        text: 'Primeros pasos con Pulsar C6',
-        items: [
-          { text: 'Índice', link: '/pulsar-c6-getting-started/' },
-          { text: 'Acerca de PULSAR C6', link: '/pulsar-c6-getting-started/00_about' },
-          { text: 'Configuración de escritorio', link: '/pulsar-c6-getting-started/01_setup' },
-          { text: 'Librerías MicroPython', link: '/pulsar-c6-getting-started/02_lib' },
-          { text: 'ESP-IDF avanzado', link: '/pulsar-c6-getting-started/02_1_esp-idf' },
-          { text: 'Pinout y esquemático', link: '/pulsar-c6-getting-started/03_pinout' },
-          { text: 'GPIO', link: '/pulsar-c6-getting-started/11_gpio' },
-          { text: 'ADC', link: '/pulsar-c6-getting-started/22_adc' },
-          { text: 'I²C', link: '/pulsar-c6-getting-started/33_i2c' },
-          { text: 'SPI y Micro SD', link: '/pulsar-c6-getting-started/44_spi' },
-          { text: 'WS2812 / NeoPixel', link: '/pulsar-c6-getting-started/55_neop' },
-          { text: 'Comunicación', link: '/pulsar-c6-getting-started/66_communication' },
-          { text: 'Conector JST SH', link: '/pulsar-c6-getting-started/jst' },
-          { text: 'Entorno Arduino/MicroPython', link: '/pulsar-c6-getting-started/env' },
-          { text: 'Reporte de errores', link: '/pulsar-c6-getting-started/report' }
-        ]
-      }
     ],
     search: {
       provider: 'local',
