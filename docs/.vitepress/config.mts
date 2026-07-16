@@ -65,6 +65,12 @@ export default defineConfig({
           { text: 'Lab 5: Bluetooth LE', link: '/examples/lab05-ble' }
         ]
       },
+      {
+        text: 'Kubi',
+        items: [
+          { text: 'Referencias de MicroPython', link: 'kubi/kubi.md' }
+        ]
+      }      
     ],
     search: {
       provider: 'local',
