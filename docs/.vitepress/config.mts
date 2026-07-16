@@ -68,7 +68,7 @@ export default defineConfig({
       {
         text: 'Kubi',
         items: [
-          { text: 'Referencias de MicroPython', link: 'kubi/kubi.md' }
+          { text: 'Instalación y configuración', link: 'kubi/kubi.md' }
         ]
       }      
     ],
