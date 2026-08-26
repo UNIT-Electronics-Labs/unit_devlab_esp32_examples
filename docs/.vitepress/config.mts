@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  markdown: {
+    math: true,
+  },
   base: process.env.BASE_PATH || '/',
   title: 'ESP32-C6 Pulsar Labs',
   description: 'Documentación de adquisición de datos e IoT con ESP32-C6 y Pulsar C6.',
@@ -58,6 +61,7 @@ export default defineConfig({
           { text: 'Comunicación I²C', link: '/guide/i2c' },
           { text: 'Comunicación SPI', link: '/guide/spi' },
           { text: 'Wi-Fi y Bluetooth LE', link: '/guide/connectivity' },
+          { text: 'Zigbee', link: '/guide/zigbee' },
           { text: 'Plataformas IoT', link: '/guide/iot-platforms' }
         ]
       },
@@ -77,7 +81,7 @@ export default defineConfig({
         items: [
           { text: 'Instalación y configuración', link: 'kubi/kubi.md' }
         ]
-      }      
+      }
     ],
     search: {
       provider: 'local',

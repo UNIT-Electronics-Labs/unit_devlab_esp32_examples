@@ -39,8 +39,15 @@ Valores mínimo y máximo que puede medir el sistema.
 
 #### 2. Resolución
 Cambio más pequeño que puede detectarse.
-- ADC de 12 bits: $2^{12} = 4096$ niveles
-- Si el rango es 0-3.3V: $\frac{3.3V}{4096} \approx 0.8mV$
+- ADC de 12 bits: 
+
+$$
+2^{12} = 4096 \text{ niveles}
+$$
+
+- Si el rango es 0-3.3V: 
+
+$$\frac{3.3\,V}{4096} \approx 0.8\,mV$$
 
 #### 3. Exactitud (Accuracy)
 Diferencia entre el valor medido y el valor real.
