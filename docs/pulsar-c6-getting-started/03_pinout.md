@@ -31,6 +31,15 @@ import { withBase } from 'vitepress'
 &#10;    <br><br>
 &#10;</div>
 
+::: warning Aclaración sobre A4 y A5
+
+La imagen conserva la nomenclatura y el código de color definidos antes de
+finalizar la PCB. En la versión final de la **PULSAR C6**, **A4 (GPIO22)** y
+**A5 (GPIO23)** se utilizan como **SDA** y **SCL** del bus I²C; no funcionan
+como entradas ADC. Consulta el [mapeo ADC actualizado](./22_adc.md#mapeo-de-pines-adc).
+
+:::
+
 La siguiente tabla muestra los detalles de pinout para las placas **PULSAR C6** y ESP32 C6.
 
 <table style="width:100%;">

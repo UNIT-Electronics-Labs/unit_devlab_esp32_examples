@@ -16,6 +16,35 @@ style="width:60.0%" alt="top.png" />
 
 </div>
 
+## Aclaración sobre los pines ADC
+
+En la tarjeta **PULSAR C6**, las posiciones **A4 y A5 no funcionan como
+entradas ADC**. La serigrafía se realizó antes de finalizar el diseño de la PCB
+y conservó la nomenclatura del formato Arduino Nano. En el diseño final, estas
+posiciones se destinaron al bus **I²C**:
+
+- **A4 (SDA)** → GPIO22
+- **A5 (SCL)** → GPIO23
+
+Por lo tanto, aunque sus etiquetas comienzan con la letra `A`, **A4 y A5 no
+corresponden a entradas analógicas en esta tarjeta**.
+
+Los siete canales ADC del ESP32-C6 sí están disponibles; solamente se
+reasignaron a las siguientes posiciones:
+
+| Posición en la tarjeta | GPIO | Canal ADC |
+|---|---|---|
+| A0 | GPIO0 | ADC1_CHANNEL_0 |
+| A1 | GPIO1 | ADC1_CHANNEL_1 |
+| A2 | GPIO3 | ADC1_CHANNEL_3 |
+| A3 | GPIO4 | ADC1_CHANNEL_4 |
+| A7 | GPIO5 | ADC1_CHANNEL_5 |
+| D12 (MISO) | GPIO2 | ADC1_CHANNEL_2 |
+| D13 (SCK) | GPIO6 | ADC1_CHANNEL_6 |
+
+No se perdió ningún canal ADC: se reasignaron sus posiciones para conservar
+la compatibilidad mecánica con el formato Nano y dedicar A4/A5 al bus I²C.
+
 Comencemos con un ejemplo simple: hacer parpadear un LED. El ejemplo demuestra cómo controlar pines GPIO en la placa **PULSAR C6** usando MicroPython y C++.
 
 ## Trabajo con LEDs en ESP32-C6
@@ -36,9 +65,11 @@ El siguiente ejemplo muestra cómo hacer parpadear un LED conectado al GPIO 6 de
 
 </div>
 
-### MicroPython
+Elige la pestaña del entorno que estés utilizando:
 
-``` python
+::: code-group
+
+```python [MicroPython]
 import machine
 import time
 
@@ -54,9 +85,7 @@ def loop():
 loop()
 ```
 
-### C++
-
-``` c++
+```cpp [Arduino (C++)]
 #define LED 6
 
 // The setup function runs once when you press reset or power the board
@@ -74,9 +103,7 @@ void loop() {
 }
 ```
 
-### esp-idf
-
-``` c
+```c [ESP-IDF (Espressif C)]
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -101,3 +128,5 @@ void app_main(void)
     }
 }
 ```
+
+:::

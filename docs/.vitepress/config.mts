@@ -18,7 +18,18 @@ export default defineConfig({
         text: 'Configuración',
         items: [
           { text: 'ESP32-C6 & Pulsar C6', link: '/guide/esp32c6' },
-          { text: 'ESP-IDF', link: '/guide/esp-idf' }
+          { text: 'Configuración de escritorio', link: '/pulsar-c6-getting-started/01_setup' },
+          {
+            text: 'Código y entornos',
+            collapsed: false,
+            items: [
+              { text: 'Arduino IDE (C/C++)', link: '/pulsar-c6-getting-started/02_0_duino' },
+              { text: 'MicroPython (Thonny)', link: '/pulsar-c6-getting-started/env' },
+              { text: 'Librerías MicroPython', link: '/pulsar-c6-getting-started/02_lib' },
+              { text: 'ESP-IDF (Espressif C/C++)', link: '/guide/esp-idf' },
+              { text: 'ESP-IDF avanzado', link: '/pulsar-c6-getting-started/02_1_esp-idf' }
+            ]
+          }
         ]
       },
       {
@@ -26,9 +37,6 @@ export default defineConfig({
         items: [
           { text: 'Índice', link: '/pulsar-c6-getting-started/' },
           { text: 'Acerca de PULSAR C6', link: '/pulsar-c6-getting-started/00_about' },
-          { text: 'Configuración de escritorio', link: '/pulsar-c6-getting-started/01_setup' },
-          { text: 'Librerías MicroPython', link: '/pulsar-c6-getting-started/02_lib' },
-          { text: 'ESP-IDF avanzado', link: '/pulsar-c6-getting-started/02_1_esp-idf' },
           { text: 'Pinout y esquemático', link: '/pulsar-c6-getting-started/03_pinout' },
           { text: 'GPIO', link: '/pulsar-c6-getting-started/11_gpio' },
           { text: 'ADC', link: '/pulsar-c6-getting-started/22_adc' },
@@ -37,7 +45,6 @@ export default defineConfig({
           { text: 'WS2812 / NeoPixel', link: '/pulsar-c6-getting-started/55_neop' },
           { text: 'Comunicación', link: '/pulsar-c6-getting-started/66_communication' },
           { text: 'Conector JST SH', link: '/pulsar-c6-getting-started/jst' },
-          { text: 'Entorno Arduino/MicroPython', link: '/pulsar-c6-getting-started/env' },
           { text: 'Reporte de errores', link: '/pulsar-c6-getting-started/report' }
         ]
       },

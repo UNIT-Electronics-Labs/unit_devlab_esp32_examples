@@ -17,15 +17,22 @@ El ESP32-C6 incluye conversores analógico-digital (ADC) y digital-analógico (D
 
 ### Canales ADC disponibles
 
-| Canal | GPIO | Uso recomendado |
-|-------|------|-----------------|
-| ADC1_CHANNEL_0 | GPIO0 | Entrada analógica |
-| ADC1_CHANNEL_1 | GPIO1 | Entrada analógica |
-| ADC1_CHANNEL_2 | GPIO2 | Entrada analógica |
-| ADC1_CHANNEL_3 | GPIO3 | Entrada analógica |
-| ADC1_CHANNEL_4 | GPIO4 | Entrada analógica |
-| ADC1_CHANNEL_5 | GPIO5 | Entrada analógica |
-| ADC1_CHANNEL_6 | GPIO6 | Entrada analógica (también I2C SDA) |
+| Canal | GPIO | Posición en PULSAR C6 |
+|-------|------|-------------------------|
+| ADC1_CHANNEL_0 | GPIO0 | A0 |
+| ADC1_CHANNEL_1 | GPIO1 | A1 |
+| ADC1_CHANNEL_2 | GPIO2 | D12 (MISO) |
+| ADC1_CHANNEL_3 | GPIO3 | A2 |
+| ADC1_CHANNEL_4 | GPIO4 | A3 |
+| ADC1_CHANNEL_5 | GPIO5 | A7 |
+| ADC1_CHANNEL_6 | GPIO6 | D13 (SCK) |
+
+::: warning Serigrafía A4/A5
+
+En la PULSAR C6, A4 (GPIO22) y A5 (GPIO23) se utilizan como SDA y SCL del bus
+I²C, respectivamente. No son entradas ADC.
+
+:::
 
 ::: warning Conflictos con Wi-Fi
 En ESP32 clásico, ADC2 no funciona con Wi-Fi activo. El ESP32-C6 solo tiene ADC1, evitando este problema.

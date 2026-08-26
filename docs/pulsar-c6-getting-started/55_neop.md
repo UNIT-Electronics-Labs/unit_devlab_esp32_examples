@@ -26,11 +26,12 @@ style="width:40.0%" alt="WS1280_LED.jpg" />
 
 ## Ejemplo de código
 
-A continuación se muestra un ejemplo para controlar LEDs WS2812 con la placa PULSAR C6.
+A continuación se muestran las implementaciones para cada entorno. Selecciona
+la pestaña que corresponda a tu proyecto.
 
-### MicroPython
+::: code-group
 
-``` python
+```python [MicroPython]
 from machine import Pin
 from neopixel import NeoPixel
 np = NeoPixel(Pin(8), 1)
@@ -39,9 +40,7 @@ np[0] = (255, 128, 0) # set to red, full brightness
 np.write()
 ```
 
-### C++
-
-``` c++
+```cpp [Arduino (C++)]
 #include <Adafruit_NeoPixel.h>
 #define PIN 8
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(1, PIN, NEO_GRB + NEO_KHZ800);
@@ -52,9 +51,7 @@ void setup() {
 }
 ```
 
-### esp-idf
-
-``` c
+```c [ESP-IDF (Espressif C)]
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -113,6 +110,8 @@ void app_main(void) {
    }
 }
 ```
+
+:::
 
 <div class="tip">
 

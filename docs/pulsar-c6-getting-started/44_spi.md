@@ -60,7 +60,7 @@ Esta tabla muestra las conexiones entre la tarjeta SD y los pines GPIO del ESP32
 
 Conexiones HSPI
 
-### MicroPython
+### Preparación para MicroPython
 
 La librería `sdcard.py` para MicroPython en ESP32 y RP2040 es compatible con tarjetas SD mediante comunicación SPI.
 
@@ -70,7 +70,7 @@ La librería `sdcard.py` para MicroPython en ESP32 y RP2040 es compatible con ta
 2.  Copia la librería desde [sdcard.py](https://github.com/UNIT-Electronics-MX/unit_devlab_micropython_libraries/blob/main/software/sdcard/sdcard.py).
 3.  Pega la librería en un archivo nuevo en Thonny y guárdala como `sdcard.py` en tu dispositivo.
 
-### C++
+### Preparación para Arduino
 
 La librería `SD.h` de Arduino es compatible con tarjetas SD usando comunicación SPI.
 
@@ -81,9 +81,14 @@ La librería `SD.h` de Arduino es compatible con tarjetas SD usando comunicació
 
 3.  Busca `SD` y haz clic en **Instalar**. También puedes usar la librería SD incluida con Arduino IDE.
 
-### MicroPython
+## Ejemplo de código
 
-``` python
+Las implementaciones para MicroPython, Arduino y ESP-IDF están reunidas en el
+mismo contenedor.
+
+::: code-group
+
+```python [MicroPython]
 import machine
 import os
 from sdcard import SDCard
@@ -111,9 +116,7 @@ print("Archivos en la SD:")
 print(os.listdir("/sd"))
 ```
 
-### C++
-
-``` c++
+```cpp [Arduino (C++)]
 #include <SPI.h>
 #include <SD.h>
 
@@ -207,9 +210,7 @@ void listDir(fs::FS &fs, const char * dirname, uint8_t levels) {
 }
 ```
 
-### esp-idf
-
-``` c
+```c [ESP-IDF (Espressif C)]
 #include <string.h>
 #include <sys/stat.h>
 #include "esp_log.h"
@@ -293,6 +294,8 @@ void app_main(void)
     ESP_LOGI(TAG, "Card unmounted.");
 }
 ```
+
+:::
 
 <figure>
 <img :src="withBase('/sphinx-static/menuconfig.png')" class="align-center"

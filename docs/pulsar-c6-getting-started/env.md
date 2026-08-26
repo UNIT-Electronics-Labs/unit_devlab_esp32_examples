@@ -2,7 +2,11 @@
 import { withBase } from 'vitepress'
 </script>
 
-# Configuración del entorno
+# Entorno MicroPython
+
+Esta página contiene exclusivamente la configuración de MicroPython con
+Thonny. Si utilizarás Arduino, consulta la guía independiente de
+[configuración de Arduino IDE](./02_0_duino.md).
 
 ## Instalación de MicroPython en DualMCU
 
@@ -134,97 +138,3 @@ def loop():
 
 loop()
 ```
-
-## Entorno de instalación de Arduino IDE
-
-### Uelectronics-RP2040-Arduino-Package
-
-El core Arduino de Uelectronics es una versión portada de [Raspberry Pi Pico Arduino Core](https://github.com/earlephilhower/arduino-pico), basada en el trabajo de Earle F. Philhower III. Este port para RP2040 usa el SDK de Raspberry Pi Pico y una toolchain GCC 10.3/Newlib 4.0 personalizada, igual que la [versión 2.6.4](https://github.com/earlephilhower/arduino-pico/releases/tag/2.6.4) de earlephilhower.
-
-## Documentación
-
-Consulta <https://github.com/UNIT-Electronics/DualMCU> y sus ejemplos para información de uso más detallada.
-
-## Placas soportadas
-
-- DualMCU RP2040
-- Raspberry Pi Pico
-- Raspberry Pi Pico W
-- Generic (flash y pines de E/S configurables)
-
-## Instalación desde el gestor de placas de Arduino
-
-Abre Arduino IDE y ve a **Archivo > Preferencias**.
-
-En el cuadro de diálogo, ingresa la siguiente URL en el campo **Gestor de URLs adicionales de tarjetas**:
-
-<https://github.com/UNIT-Electronics/Uelectronics-RP2040-Arduino-Package/releases/download/v1.0.0/package_Uelectronics_rp2040_index.json>
-
-<div id="figure_AditionalBoardsManagerURL">
-
-<figure>
-<img :src="withBase('/sphinx-static/AditionalBoardsManagerURL.png')"
-class="align-center" style="width:60.0%"
-alt="AditionalBoardsManagerURL.png" />
-<figcaption>Preferencias: URL adicional del gestor de placas</figcaption>
-</figure>
-
-</div>
-
-Presiona OK para cerrar el cuadro de diálogo.
-
-Ve a **Herramientas > Placas > Gestor de placas** en el IDE.
-
-Escribe "DualMCU" en el cuadro de búsqueda y selecciona "Add":
-
-<div id="figure_BoardsManager">
-
-<figure>
-<img :src="withBase('/sphinx-static/BoardsManager.png')" class="align-center"
-style="width:60.0%" alt="BoardsManager.png" />
-<figcaption>Gestor de placas</figcaption>
-</figure>
-
-</div>
-
-### Uelectronics-RP2040-Arduino-Package
-
-El paquete Uelectronics-ESP32-Arduino reúne herramientas de software para programar y controlar dispositivos con el MCU ESP32 en la DualMCU desde la plataforma Arduino. Incluye librerías y herramientas para programar el ESP32 usando Arduino IDE.
-
-El paquete incluye ejemplos de código para comenzar a programar el ESP32 y crear dispositivos conectados.
-
-## Placas soportadas
-
-- UNIT DualMCU ESP32
-- ESP32 Dev Module
-- ESP32S3 Dev Module
-- ESP32C3 Dev Module
-- ESP32S2 Dev Module
-
-## Instalación desde el gestor de placas de Arduino
-
-Abre Arduino IDE y ve a **Archivo > Preferencias**.
-
-- Enlace de versión estable:
-  `https://github.com/UNIT-Electronics/Uelectronics-ESP32-Arduino-Package/releases/download/v1.0.0/package_Uelectronics_ESP32_index.json`
-
-Arduino permite instalar paquetes de plataformas de terceros mediante el gestor de placas.
-
-- Instala Arduino IDE 1.8 o superior. La versión actual está disponible en el [sitio web de Arduino](http://www.arduino.cc/en/main/software).
-- Inicia Arduino y abre la ventana de preferencias.
-
-- Ingresa uno de los enlaces anteriores en el campo *Gestor de URLs adicionales de tarjetas*. Puedes agregar varias URLs separadas por comas.
-- Abre el gestor de placas desde **Herramientas > Placa** e instala la plataforma *esp32*. Después de instalarla, selecciona tu placa ESP32 desde **Herramientas > Placa**.
-
-### Soporte
-
-La placa de desarrollo DualMCU es compatible con entornos MicroPython como Thonny y con el entorno de desarrollo Arduino. Esta compatibilidad permite programar la DualMCU usando MicroPython, CircuitPython o el lenguaje Arduino.
-
-El soporte de IDE para MicroPython incluye una consola interactiva (REPL) para ejecutar comandos de inmediato en MicroPython y CircuitPython, facilitando pruebas y depuración rápidas.
-
-Además, el soporte para Arduino permite aprovechar sus herramientas y recursos de comunidad. Es especialmente útil si ya estás familiarizado con Arduino y quieres usar sus funciones y recursos para desarrollar proyectos con la placa DualMCU.
-
-|                            |                                                                             |
-|----------------------------|-----------------------------------------------------------------------------|
-| **Arduino Package RP2040** | **https://github.com/UNIT-Electronics/Uelectronics-RP2040-Arduino-Package** |
-| **Arduino Package ESP32**  | **https://github.com/UNIT-Electronics/Uelectronics-ESP32-Arduino-Package**  |

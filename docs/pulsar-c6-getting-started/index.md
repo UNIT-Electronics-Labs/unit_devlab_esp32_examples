@@ -5,13 +5,29 @@ revisar su pinout, configurar el entorno de desarrollo y probar periféricos
 básicos. El flujo recomendado para prácticas y ejemplos es Arduino IDE; las
 notas de ESP-IDF se conservan como referencia avanzada.
 
-## Páginas de Inicio
+## Configuración del entorno
+
+- [Configuración de escritorio](./01_setup.md)
+
+::: info Código y entornos de programación
+
+Todas las alternativas de desarrollo están reunidas en este contenedor:
+
+- [Arduino IDE (C/C++)](./02_0_duino.md)
+- [MicroPython con Thonny](./env.md)
+- [Librerías MicroPython](./02_lib.md)
+- [ESP-IDF de Espressif (C/C++)](../guide/esp-idf.md)
+- [ESP-IDF avanzado](./02_1_esp-idf.md)
+
+Cada entorno conserva su propia configuración. En los ejemplos compatibles,
+las implementaciones se presentan juntas mediante pestañas para facilitar su
+comparación.
+
+:::
+
+## Páginas de inicio
 
 - [Acerca de PULSAR C6](./00_about.md)
-- [Configuración de escritorio](./01_setup.md)
-- [Arduino IDE](./02_0_duino.md)
-- [Librerías MicroPython](./02_lib.md)
-- [ESP-IDF avanzado](./02_1_esp-idf.md)
 - [Tarjeta, esquemático y pinout](./03_pinout.md)
 - [GPIO](./11_gpio.md)
 - [ADC](./22_adc.md)
@@ -20,7 +36,6 @@ notas de ESP-IDF se conservan como referencia avanzada.
 - [WS2812 / NeoPixel](./55_neop.md)
 - [Comunicación](./66_communication.md)
 - [Conector JST SH](./jst.md)
-- [Entorno MicroPython y Arduino IDE](./env.md)
 - [Reporte de errores](./report.md)
 
 ## Recursos

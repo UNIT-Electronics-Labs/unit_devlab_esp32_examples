@@ -19,19 +19,27 @@ Las señales analógicas son continuas y pueden tomar cualquier valor dentro de 
 
 ## Mapeo de pines ADC
 
-La siguiente tabla muestra la distribución de pines ADC en la placa **PULSAR C6** y sus GPIO correspondientes en el ESP32-C6.
+La siguiente tabla muestra la distribución real de los siete canales ADC en
+la placa **PULSAR C6**:
 
-| Pin Number | **PULSAR C6** | ESP32-C6 |
-|------------|---------------|----------|
-| 1          | A0/D14        | GPIO0    |
-| 2          | A1/D15        | GPIO1    |
-| 3          | A2/D16        | GPIO3    |
-| 4          | A3/D17        | GPIO4    |
-| 5          | A4/D18        | GPIO22   |
-| 6          | A5/D19        | GPIO23   |
-| 7          | A7            | GPIO5    |
+| Posición en la tarjeta | GPIO | Canal ADC |
+|---|---|---|
+| A0 | GPIO0 | ADC1_CHANNEL_0 |
+| A1 | GPIO1 | ADC1_CHANNEL_1 |
+| A2 | GPIO3 | ADC1_CHANNEL_3 |
+| A3 | GPIO4 | ADC1_CHANNEL_4 |
+| A7 | GPIO5 | ADC1_CHANNEL_5 |
+| D12 (MISO) | GPIO2 | ADC1_CHANNEL_2 |
+| D13 (SCK) | GPIO6 | ADC1_CHANNEL_6 |
 
-Mapeo de pines ADC
+::: warning A4 y A5 no son entradas ADC
+
+En la PULSAR C6, **A4 corresponde a SDA (GPIO22)** y **A5 corresponde a SCL
+(GPIO23)**. Ambas posiciones están dedicadas al bus I²C. La nomenclatura A4/A5
+se conservó por compatibilidad mecánica con el formato Arduino Nano, pero no
+indica capacidad analógica en esta tarjeta.
+
+:::
 
 ## Clase ADC
 
@@ -47,43 +55,44 @@ El constructor de la clase ADC recibe un único argumento: el número de pin.
 
 Para definir y usar un objeto ADC, sigue este ejemplo:
 
-### MicroPython
+::: code-group
 
-``` python
+```python [MicroPython]
 import machine
 adc = machine.ADC(0)  # Initialize ADC on pin A0
 ```
 
-### C++
-
-``` cpp
+```cpp [Arduino (C++)]
 #define ADC0 0 // GPIO0 for A0
 ```
+
+:::
 
 ## Lectura de valores
 
 Para leer el valor analógico convertido a formato digital:
 
-### MicroPython
+::: code-group
 
-``` python
+```python [MicroPython]
 adc_value = adc.read()  # Read the ADC value
 print(adc_value)  # Print the ADC value
 ```
 
-### C++
-
-``` cpp
+```cpp [Arduino (C++)]
 voltage = analogRead(ADC0);
 ```
 
-## Example Code
+:::
 
-El siguiente ejemplo lee continuamente un pin ADC e imprime los resultados:
+## Ejemplo completo
 
-### MicroPython
+El siguiente contenedor reúne las implementaciones que leen continuamente un
+pin ADC e imprimen los resultados:
 
-``` python
+::: code-group
+
+```python [MicroPython]
 import machine
 import time
 
@@ -97,9 +106,7 @@ while True:
     time.sleep(1)                     # Delay for 1 second
 ```
 
-### C++
-
-``` cpp
+```cpp [Arduino (C++)]
 const int adcPin = 0; // GPIO0 (A0)
 int adcValue = 0;
 
@@ -117,9 +124,7 @@ void loop() {
 }
 ```
 
-### esp-idf
-
-``` c
+```c [ESP-IDF (Espressif C)]
 #include <stdio.h>
 #include "esp_log.h"
 #include "esp_err.h"
@@ -151,6 +156,8 @@ void app_main(void)
     }
 }
 ```
+
+:::
 
 <div id="figure_adc">
 
