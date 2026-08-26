@@ -221,9 +221,7 @@ code --version
 
 Arduino IDE es una plataforma de código abierto muy usada para construir y programar proyectos basados en microcontroladores. Ofrece una interfaz amigable y muchas librerías que simplifican el desarrollo.
 
-Para instalar Arduino IDE, sigue las instrucciones correspondientes a tu sistema operativo en la
-
-<a href="https://wiki.uelectronics.com/tutoriales/inicio-arduino" target="_blank">guía de instalación de paquetes de UNIT Electronics</a>.
+Para instalar Arduino IDE y agregar los paquetes de placas de UNIT Electronics (incluyendo el paquete ESP32 requerido por la PULSAR C6), consulta la página [Arduino IDE](./02_0_duino.md).
 
 ## Instalación de Thonny IDE
 

@@ -9,6 +9,7 @@ notas de ESP-IDF se conservan como referencia avanzada.
 
 - [Acerca de PULSAR C6](./00_about.md)
 - [Configuración de escritorio](./01_setup.md)
+- [Arduino IDE](./02_0_duino.md)
 - [Librerías MicroPython](./02_lib.md)
 - [ESP-IDF avanzado](./02_1_esp-idf.md)
 - [Tarjeta, esquemático y pinout](./03_pinout.md)
