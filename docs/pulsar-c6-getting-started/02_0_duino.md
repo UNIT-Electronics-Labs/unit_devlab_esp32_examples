@@ -21,20 +21,13 @@ agregar el índice del paquete ESP32 de UNIT Electronics.
 1.  Abre Arduino IDE y ve a **Archivo > Preferencias**.
 
 <figure>
-<img :src="withBase('/sphinx-static/AditionalBoardsManagerURL.png')" class="align-center"
-style="width:80.0%" alt="Campo de URLs adicionales del gestor de placas" />
+
+<img src="./img/AditionalBoardsManagerURL.png" class="align-center"
+style="width:100.0%" alt="Campo de URLs adicionales del gestor de placas" />
+
 <figcaption>Referencia para localizar el campo de URLs adicionales</figcaption>
+
 </figure>
-
-<div class="note">
-
-<div class="title">
-
-Imagen de referencia
-
-</div>
-
-</div>
 
 2.  En el campo **Gestor de URLs Adicionales de Tarjetas**, pega exactamente la
     siguiente URL:
@@ -52,30 +45,23 @@ https://raw.githubusercontent.com/UNIT-Electronics/Uelectronics-ESP32-Arduino-Pa
     **UNIT Electronics ESP32**.
 
 <figure>
-<img :src="withBase('/sphinx-static/BoardsManager.png')" class="align-center"
-style="width:60.0%" alt="Gestor de placas con el paquete RP2040" />
-<figcaption>Referencia visual del Gestor de placas; la captura muestra RP2040</figcaption>
+<img src="./img/BoardsManager.png" class="align-center"
+style="width:50.0%" alt="Gestor de placas con el paquete ESP32" />
+<figcaption>Referencia visual del Gestor de placas</figcaption>
 </figure>
 
-La captura anterior muestra el paquete **UNIT Electronics RP2040** únicamente
-como referencia de la ubicación y apariencia del Gestor de placas. Para la
-PULSAR C6 debes buscar e instalar **UNIT Electronics ESP32**, como se indica en
-el paso 2.
 
 3.  Una vez instalado, ve a **Herramientas > Placa > UNIT Electronics ESP32**
     y selecciona **PULSAR ESP32-C6**.
 
-<div class="attention">
-
-<div class="title">
-
-Atención
-
-</div>
+<figure>
+<img src="./img/boards-esp32c6.png" class="align-center"
+style="width:150.0%" alt="Gestor de placas con el paquete ESP32" />
+<figcaption>Referencia visual del Gestor de placas</figcaption>
+</figure>
 
 Verifica que el puerto serie correcto esté seleccionado en **Herramientas > Puerto** antes de compilar y cargar un sketch.
 
-</div>
 
 ## 4. Compilar y cargar un programa
 
