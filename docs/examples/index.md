@@ -74,6 +74,31 @@ Comunícate con dispositivos móviles mediante Bluetooth LE. Incluye:
 
 ---
 
+### [Lab 6: Zigbee](./lab06-zigbee-basic.md)
+Construye una red Zigbee mínima entre dos placas Pulsar C6. Incluye:
+- Configuración de un Coordinador y un End Device
+- Roles de una red Zigbee (coordinador, router, end device)
+- Envío y recepción de datos vía clúster ZCL
+- Enlace (bind) y reporte de atributos
+
+**Duración estimada**: 2-3 horas  
+**Dificultad**: ⭐⭐⭐⭐☆
+
+---
+
+### [Lab 7: PULSAR Stick — I²C y Zigbee](./labs07-zigbee-pulsar-stick.md)
+Integra dos placas PY32F003 con una red Zigbee administrada por la PULSAR
+ESP32-C6 a través de I²C. Incluye:
+- Modificación y carga de firmware en dos placas PY32F003
+- Asignación de identificadores lógicos y direcciones I²C
+- Generación de eventos con temporizador de software y lectura ADC
+- Incorporación de la PULSAR ESP32-C6 a la red Zigbee del equipo
+
+**Duración estimada**: 3-4 horas (trabajo en equipo)  
+**Dificultad**: ⭐⭐⭐⭐⭐
+
+---
+
 ## Progresión sugerida
 
 Para aprovechar al máximo las prácticas, se recomienda completarlas en orden:
@@ -83,6 +108,8 @@ Para aprovechar al máximo las prácticas, se recomienda completarlas en orden:
 3. **Lab 3** → Adquisición analógica
 4. **Lab 4** → Conectividad IoT con Wi-Fi
 5. **Lab 5** → Comunicación móvil con BLE
+6. **Lab 6** → Fundamentos de redes Zigbee
+7. **Lab 7** → Integración I²C + Zigbee en equipo con PULSAR Stick
 
 ## Flujo de trabajo recomendado
 
@@ -156,6 +183,7 @@ Estos componentes se usan en múltiples laboratorios:
 ## Recursos adicionales
 
 ### Herramientas de software
+- [Panel Loader](https://unit-electronics-labs.github.io/unit_microsupport_labs/) - Carga de firmware desde el navegador (ESP32 y PY32/Cortex vía SWD), usado en el Lab 7
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Arduino ESP32 core](https://github.com/espressif/arduino-esp32)
 - [nRF Connect](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile) - App BLE
