@@ -73,7 +73,8 @@ export default defineConfig({
           { text: 'Lab 2: Pantalla OLED', link: '/examples/lab02-oled-display' },
           { text: 'Lab 3: ADC Analógico', link: '/examples/lab03-adc' },
           { text: 'Lab 4: Publicación Wi-Fi', link: '/examples/lab04-wifi' },
-          { text: 'Lab 5: Bluetooth LE', link: '/examples/lab05-ble' }
+          { text: 'Lab 5: Bluetooth LE', link: '/examples/lab05-ble' },
+          { text: 'Lab 6: Zigbee', link: '/examples/lab06-zigbee-basic' }
         ]
       },
       {
