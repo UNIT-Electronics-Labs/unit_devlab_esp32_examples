@@ -86,13 +86,12 @@ Construye una red Zigbee mínima entre dos placas Pulsar C6. Incluye:
 
 ---
 
-### [Lab 7: PULSAR Stick — I²C y Zigbee](./labs07-zigbee-pulsar-stick.md)
-Integra dos placas PY32F003 con una red Zigbee administrada por la PULSAR
-ESP32-C6 a través de I²C. Incluye:
-- Modificación y carga de firmware en dos placas PY32F003
-- Asignación de identificadores lógicos y direcciones I²C
-- Generación de eventos con temporizador de software y lectura ADC
-- Incorporación de la PULSAR ESP32-C6 a la red Zigbee del equipo
+### [Lab 7: PULSAR Stick — Red Zigbee](./labs07-zigbee-pulsar-stick.md)
+Configura una red Zigbee con dispositivos PULSAR. Incluye:
+- Carga de firmware merged mediante Panel Loader
+- Un Gateway ESP32-C5 y una PULSAR Stick ESP32-C6 como Switch
+- Incorporación de las demás PULSAR Stick como Lamp
+- Validación de comandos, estado de red y respuesta de las lámparas
 
 **Duración estimada**: 3-4 horas (trabajo en equipo)  
 **Dificultad**: ⭐⭐⭐⭐⭐
@@ -109,7 +108,7 @@ Para aprovechar al máximo las prácticas, se recomienda completarlas en orden:
 4. **Lab 4** → Conectividad IoT con Wi-Fi
 5. **Lab 5** → Comunicación móvil con BLE
 6. **Lab 6** → Fundamentos de redes Zigbee
-7. **Lab 7** → Integración I²C + Zigbee en equipo con PULSAR Stick
+7. **Lab 7** → Integración de una red Zigbee con PULSAR Stick
 
 ## Flujo de trabajo recomendado
 
@@ -183,7 +182,7 @@ Estos componentes se usan en múltiples laboratorios:
 ## Recursos adicionales
 
 ### Herramientas de software
-- [Panel Loader](https://unit-electronics-labs.github.io/unit_microsupport_labs/) - Carga de firmware desde el navegador (ESP32 y PY32/Cortex vía SWD), usado en el Lab 7
+- [Panel Loader](https://unit-electronics-labs.github.io/unit_microsupport_labs/) - Carga de firmware merged ESP32 desde el navegador, usada en el Lab 7
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Arduino ESP32 core](https://github.com/espressif/arduino-esp32)
 - [nRF Connect](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile) - App BLE

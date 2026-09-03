@@ -1,4 +1,4 @@
-# Lab 7: PULSAR Stick — I²C y Zigbee
+# Lab 7: PULSAR Stick — Red Zigbee
 
 La **PULSAR Stick** es un desarrollo pensado para facilitar la experiencia
 con microcontroladores a la hora de realizar conexiones. Integra un
@@ -24,67 +24,60 @@ dispositivo, sin depender de un depurador ni del monitor serial:
 - `MODE: POWER` — modo de operación configurado.
 - `SHORT: ON/OFF` — acción asignada a la pulsación corta del botón.
 
-Esta lectura en pantalla es, junto con el patrón de LED, una de las dos
-formas de obtener evidencia del identificador que se piden en los
-resultados de aprendizaje.
+Esta lectura en pantalla permite comprobar el rol cargado y el estado de
+la red sin depender de un depurador ni del monitor serial.
 
 ## Objetivo del taller
 
-Configurar y validar dos funciones embebidas principales en el
-**PY32F003**, integrando su control local con una red Zigbee a través de
-la interfaz I²C administrada por la **PULSAR ESP32-C6**.
+Configurar una red Zigbee con dispositivos PULSAR, asignar los firmware
+merged de Gateway, Switch y Lamp, y validar el control de las lámparas
+desde una PULSAR Stick configurada como interruptor.
 
 ## Resultados del aprendizaje
 
 Al finalizar, los participantes podrán:
 
-- Modificar parámetros previstos en un firmware embebido existente.
-- Modificar, compilar y cargar ejemplos en dos placas PY32F003 con
-  responsabilidades diferentes.
-- Modificar, compilar y cargar el firmware de una PULSAR ESP32-C6
-  mediante Arduino IDE.
-- Asignar y comprobar los identificadores lógicos y las direcciones I²C
-  previstas.
-- Obtener evidencia del identificador mediante un patrón de LED definido
-  o una salida de terminal, sin depender de un depurador.
-- Generar un evento repetible con un temporizador de software, variar
-  una lectura ADC y observar su tratamiento en los tres firmwares.
-- Validar una lectura I²C local cuando la topología Qwiic completa haya
-  superado la prueba previa.
-- Diferenciar un identificador lógico de una dirección I²C y de una
-  identidad Zigbee.
-- Identificar las funciones de coordinador, enrutador y dispositivo
-  final en una red Zigbee.
-- Incorporar la PULSAR ESP32-C6 del equipo y observar su reporte en la
-  red Zigbee.
-- Distinguir una demostración de arquitectura de una integración
-  eléctrica y de firmware real.
+- Identificar las funciones de Gateway, Switch y Lamp dentro de la red
+  Zigbee de la práctica.
+- Seleccionar el binario merged correcto para un Gateway ESP32-C5 y para
+  cada PULSAR Stick ESP32-C6.
+- Cargar los firmware mediante Panel Loader y comprobar el rol activo en
+  la pantalla OLED.
+- Incorporar las PULSAR Stick a la red y verificar el estado
+  `NETWORK: JOINED`.
+- Generar comandos desde una única Stick configurada como Switch y
+  observar la respuesta de las Stick configuradas como Lamp.
+- Reconocer las funciones de coordinador, enrutador y dispositivo final
+  dentro de una red Zigbee.
+- Usar el firmware Toolbox como herramienta de diagnóstico cuando sea
+  necesario validar el hardware.
+- Registrar evidencia del rol, la unión a la red y la respuesta de las
+  lámparas durante la prueba final.
 
 ## Metodología
 
 | Etapa | Asignación de roles | Dinámica |
 |---|---|---|
-| **Etapa 1: Preparación** | 2 personas en PY32 A · 2 personas en PY32 B · 1 persona en ESP32-C6 | En cada pareja se alternan para modificar, compilar y cargar el firmware.<br>**PY32:** flujo separado (compilación en Arduino IDE + carga SWD vía Web/Chrome).<br>**ESP32-C6:** flujo directo en Arduino IDE. |
-| **Etapa 2: Integración** | Roles rotativos entre los 5 integrantes | El equipo completo integra la estación, realiza pruebas globales y aplica el procedimiento de recuperación si es necesario. |
+| **Etapa 1: Preparación** | 1 Gateway · 1 Switch · las demás PULSAR Stick como Lamp | Cada integrante descarga y carga el binario merged correspondiente a su placa mediante Panel Loader. |
+| **Etapa 2: Integración Zigbee** | Roles fijos durante la prueba | El equipo inicia el Gateway, incorpora las PULSAR Stick a la red y comprueba `NETWORK: JOINED` en cada pantalla. |
+| **Etapa 3: Validación** | Switch y Lamp | Se generan comandos desde la única Stick Switch y se verifica la respuesta de todas las Stick Lamp. Toolbox se utiliza solo si es necesario diagnosticar hardware. |
 
 ## Materiales para el taller
 
-| Producto | SKU | Cantidad por equipo | Cantidad total |
-|---|---|---|---|
-| Tarjeta PY32F003L24D6TR ARM 32 bits | AR4354 | 1 | 4 |
-| PULSAR ESP32-C6 | AR4606 | 1 | 5 |
-| CH552 programador multiprotocolo SWD | AR4664 | 2 | 8 |
-| Protoboard de 400 puntos, variante blanca | N/D — producto con variantes | 1 | 4 |
-| Potenciómetro lineal WH148 de 3 pines (10k) | N/D — seleccionar 10k | 1 | 4 |
-| Arnés Qwiic de 4 pines, pitch 1 mm | N/D — producto con variantes | 3 | 12 |
-| UNIT Hub I2C QW/ST de 5 puertos | AR3678 | 1 | 4 |
+| Producto | Cantidad | Función |
+|---|---|---|
+| Gateway ESP32-C5 | 1 por red | Crear y administrar la red Zigbee |
+| PULSAR Stick ESP32-C6 | 1 como Switch | Enviar los comandos de control |
+| PULSAR Stick ESP32-C6 | Las demás como Lamp | Recibir los comandos y controlar las lámparas |
+| Módulo de lámpara Qwiic | 1 por Stick Lamp | Mostrar la respuesta al comando Zigbee |
+| Cable USB de datos | 1 por placa durante la carga | Programación mediante Panel Loader |
 
 ## Carga de firmware — Panel Loader
 
 Los dispositivos de la práctica se programan desde el navegador con
 **Panel Loader**, sin instalar `esptool` ni drivers adicionales. Elige
-el firmware y el protocolo que correspondan al microcontrolador y a la
-función de cada placa:
+el firmware que corresponda al microcontrolador y a la función de cada
+placa:
 
 **[Abrir Panel Loader](https://unit-electronics-labs.github.io/unit_microsupport_labs/)**
 
@@ -105,27 +98,25 @@ y están listos para seleccionarse desde Panel Loader:
 | Lamp | Para todas las PULSAR Stick | [Descargar `pulsar_stick_lamp_merged.bin`](/examples/firmware/pulsar_stick_lamp_merged.bin) |
 | Toolbox | Herramienta de pruebas para validación de hardware | [Descargar `pulsar_stick_TOOLBOX_merged.bin`](/examples/firmware/pulsar_stick_TOOLBOX_merged.bin) |
 
-### Protocolo según la placa
+### Protocolo de carga
 
 | Pestaña del panel | Protocolo | Placa de esta práctica |
 |---|---|---|
-| **Cortex** | SWD, vía el programador **CH552** | Placas **PY32F003**, cuando la etapa de la práctica requiera programarlas |
 | **ESP32** | Serie / esptool-js | **Gateway ESP32-C5** y PULSAR Stick **ESP32-C6** con firmware Switch, Lamp o Toolbox |
 
 ### Pasos para cargar un firmware
 
-1. Abre el enlace del Panel Loader y selecciona la pestaña **Cortex** o
-   **ESP32** según la placa que vayas a programar.
+1. Abre el enlace del Panel Loader y selecciona la pestaña **ESP32**.
 2. En **Firmware**, da clic en **Seleccionar firmware** y elige el
-   `.bin` (o `.elf` en Cortex) que compilaste en Arduino IDE:
+   archivo `.bin` merged correspondiente:
    - **Archivo local**: el binario recién compilado en tu equipo.
    - **Catálogo web**: una versión ya publicada, si el instructor la
      agregó al catálogo del repositorio.
 3. Revisa la **dirección de flash** (`0x0000` por defecto) y la
    **velocidad de carga** (115200 baud es un valor seguro para
    empezar).
-4. Da clic en **Conectar ESP** (o el botón equivalente en Cortex) y
-   selecciona el puerto o dispositivo que te ofrezca el navegador.
+4. Da clic en **Conectar ESP** y selecciona el puerto que te ofrezca el
+   navegador.
 5. Da clic en **Programar firmware** y espera a que el progreso llegue
    a 100%.
 6. Repite el proceso con las demás placas según la función asignada a
