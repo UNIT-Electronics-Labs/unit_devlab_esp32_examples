@@ -75,7 +75,8 @@ export default defineConfig({
           { text: 'Lab 4: Publicación Wi-Fi', link: '/examples/lab04-wifi' },
           { text: 'Lab 5: Bluetooth LE', link: '/examples/lab05-ble' },
           { text: 'Lab 6: Zigbee', link: '/examples/lab06-zigbee-basic' },
-          { text: 'Lab 7: PULSAR Stick Red Zigbee', link: '/examples/labs07-zigbee-pulsar-stick' }
+          { text: 'Lab 7: PULSAR Stick Red Zigbee', link: '/examples/labs07-zigbee-pulsar-stick' },
+          { text: 'Lab 8: PULSAR Powersupply con Zigbee + Integración con Alexa', link: '/examples/labs08-zigbee-pulsar-powersupply' }
         ]
       },
       {
