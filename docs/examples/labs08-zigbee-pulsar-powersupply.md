@@ -143,6 +143,8 @@ una carga falla o un dispositivo no queda en **OK**.
    - `Alexa, apaga [nombre del dispositivo]` → marca la salida como
      apagada, sin desconectar físicamente el cargador.
 
+![Control por voz de la fuente con Alexa](./pulsarpower/alexavoz.gif)
+
 ## Usar el control de brillo (dimmer) en la app de Alexa
 
 Además de los comandos de voz, el voltaje se puede ajustar tocando el
