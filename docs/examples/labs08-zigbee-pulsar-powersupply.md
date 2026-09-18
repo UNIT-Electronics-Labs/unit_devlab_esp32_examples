@@ -158,8 +158,6 @@ foco regulable:
    selecciona el voltaje más cercano disponible (ver
    [Prueba de funcionamiento](#prueba-de-funcionamiento)).
 
-![Control de brillo del Power Supply en la app de Alexa](./pulsar_powersupply/dimmer-alexa.png)
-
 > Si no ves el control deslizante, revisa que el dispositivo se haya
 > emparejado como **luz regulable** y no como un simple enchufe/switch;
 > vuelve a intentar el emparejamiento si Alexa lo registró como On/Off
